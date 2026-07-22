@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu Principal</title>
+<link rel="stylesheet" href="Quinta_seccion.css">
+</head>
+
+<body>
+
+<div class="telefono">
+
+<header>
+
+<div class="iconos">
+<button>👤</button>
+<button>🔔</button>
+</div>
+
+<input type="text" id="buscar" placeholder="Buscar materia...">
+
+</header>
+
+<h1>Menu Principal</h1>
+
+<div class="grid">
+
+<div class="card nueva" onclick="agregarMateria()">
+<div class="icono">+</div>
+<p>Materia Nueva</p>
+</div>
+
+<div class="card">
+🖼️
+<p>Física</p>
+</div>
+
+<div class="card">
+🖼️
+<p>Química</p>
+</div>
+
+<div class="card">
+🖼️
+<p>Español</p>
+</div>
+
+<div class="card">
+🖼️
+<p>Matemáticas</p>
+</div>
+
+<div class="card">
+🖼️
+<p>Filosofía</p>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const buscador=document.getElementById("buscar");
+
+buscador.addEventListener("keyup",function(){
+
+let texto=this.value.toLowerCase();
+
+let cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+if(card.innerText.toLowerCase().includes(texto))
+card.style.display="flex";
+else
+card.style.display="none";
+
+});
+
+});
+
+function agregarMateria(){
+
+let nombre=prompt("Nombre de la nueva materia:");
+
+if(nombre){
+
+let div=document.createElement("div");
+
+div.className="card";
+
+div.innerHTML="🖼️<p>"+nombre+"</p>";
+
+document.querySelector(".grid").appendChild(div);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

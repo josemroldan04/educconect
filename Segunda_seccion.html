@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta 
+        name="viewport" 
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Iniciar sesión - EduConnect</title>
+
+    <link rel="stylesheet" href="Segunda_seccion.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- ENCABEZADO -->
+        <header class="header">
+
+            <div class="icono">
+                BACK
+            </div>
+
+            <h1>
+                Inicia sesión en EduConnect
+            </h1>
+
+        </header>
+
+
+        <!-- FORMULARIO -->
+        <section class="login">
+
+            <h2>
+                Estudiante o maestro
+            </h2>
+
+
+            <!-- SELECCIONAR TIPO DE USUARIO -->
+
+            <div class="roles">
+
+                <button 
+                    type="button"
+                    class="role active"
+                    id="estudianteBtn"
+                    onclick="seleccionarRol('estudiante')"
+                >
+                    Estudiante
+                </button>
+
+                <button 
+                    type="button"
+                    class="role"
+                    id="maestroBtn"
+                    onclick="seleccionarRol('maestro')"
+                >
+                    Maestro
+                </button>
+
+            </div>
+
+
+            <!-- CORREO -->
+
+            <label for="email">
+                Correo electrónico
+            </label>
+
+            <input 
+                type="email"
+                id="email"
+                placeholder="ejemplo@gmail.com"
+            >
+
+
+            <!-- CONTRASEÑA -->
+
+            <label for="password">
+                Contraseña
+            </label>
+
+            <div class="password-container">
+
+                <input 
+                    type="password"
+                    id="password"
+                    placeholder="Escribe tu contraseña"
+                >
+
+                <button 
+                    type="button"
+                    class="show-password"
+                    onclick="mostrarPassword()"
+                >
+                    👁️
+                </button>
+
+            </div>
+
+
+            <!-- PIN -->
+
+            <label for="pin">
+                Ingrese su PIN
+            </label>
+
+            <input 
+                type="password"
+                id="pin"
+                placeholder="Escribe tu PIN"
+                maxlength="6"
+            >
+
+
+            <!-- BOTÓN INICIAR SESIÓN -->
+
+            <button 
+                type="button"
+                class="login-button"
+                onclick="iniciarSesion()"
+            >
+                Iniciar sesión
+            </button>
+
+
+            <!-- OLVIDASTE LA CONTRASEÑA -->
+
+            <button 
+                type="button"
+                class="forgot-button"
+                onclick="olvidastePassword()"
+            >
+                ¿Olvidaste la contraseña?
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- VENTANA PARA RECUPERAR CONTRASEÑA -->
+
+    <div 
+        class="modal"
+        id="modalRecuperar"
+    >
+
+        <div class="modal-content">
+
+            <button 
+                class="close"
+                onclick="cerrarModal()"
+            >
+                ×
+            </button>
+
+            <h2>
+                Recuperar contraseña
+            </h2>
+
+            <p>
+                Ingresa tu correo electrónico y te enviaremos
+                instrucciones para recuperar tu contraseña.
+            </p>
+
+            <input 
+                type="email"
+                id="emailRecuperar"
+                placeholder="Tu correo electrónico"
+            >
+
+            <button 
+                class="recover-button"
+                onclick="recuperarPassword()"
+            >
+                Enviar instrucciones
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

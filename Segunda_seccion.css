@@ -1,0 +1,538 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #141c2b,
+        #386fa8
+    );
+
+}
+
+
+/* CONTENEDOR PRINCIPAL */
+
+.app {
+
+    width: 550px;
+
+    min-height: 900px;
+
+    background: #fffef7;
+
+    border-radius: 45px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.35);
+
+}
+
+
+/* ENCABEZADO */
+
+.header {
+
+    height: 205px;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #e9f4fb
+    );
+
+    padding: 30px 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+.icono {
+
+    width: 65px;
+
+    height: 45px;
+
+    border: 4px solid #138ed1;
+
+    border-radius: 6px;
+
+    color: #138ed1;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    margin-bottom: 35px;
+
+}
+
+
+.header h1 {
+
+    font-size: 32px;
+
+    color: #111827;
+
+}
+
+
+/* FORMULARIO */
+
+.login {
+
+    padding: 70px 25px 40px;
+
+}
+
+
+.login h2 {
+
+    font-size: 23px;
+
+    color: #273444;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* BOTONES DE ESTUDIANTE Y MAESTRO */
+
+.roles {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.role {
+
+    flex: 1;
+
+    height: 55px;
+
+    border: 3px solid #29a9e0;
+
+    border-radius: 7px;
+
+    background: #dff4fb;
+
+    color: #3687b0;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.role:hover {
+
+    background: #bce6f5;
+
+}
+
+
+.role.active {
+
+    background: #75cbea;
+
+    color: white;
+
+    box-shadow:
+        0 3px 8px rgba(0,150,200,0.3);
+
+}
+
+
+/* ETIQUETAS */
+
+.login label {
+
+    display: block;
+
+    font-size: 22px;
+
+    color: #394553;
+
+    margin: 25px 0 8px;
+
+}
+
+
+/* INPUTS */
+
+.login input {
+
+    width: 100%;
+
+    height: 65px;
+
+    border: 2px solid #c9cdd1;
+
+    border-radius: 13px;
+
+    background: white;
+
+    padding: 0 20px;
+
+    font-size: 18px;
+
+    outline: none;
+
+    transition: 0.3s;
+
+}
+
+
+.login input:focus {
+
+    border-color: #27a9e0;
+
+    box-shadow:
+        0 0 0 3px rgba(39,169,224,0.15);
+
+}
+
+
+/* CONTRASEÑA */
+
+.password-container {
+
+    position: relative;
+
+}
+
+
+.password-container input {
+
+    padding-right: 60px;
+
+}
+
+
+.show-password {
+
+    position: absolute;
+
+    right: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+}
+
+
+/* BOTÓN INICIAR SESIÓN */
+
+.login-button {
+
+    width: 100%;
+
+    height: 60px;
+
+    margin-top: 50px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #36b6e8;
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.login-button:hover {
+
+    background: #159bd2;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* OLVIDASTE LA CONTRASEÑA */
+
+.forgot-button {
+
+    width: 100%;
+
+    height: 55px;
+
+    margin-top: 20px;
+
+    border: 3px solid #29a9e0;
+
+    border-radius: 8px;
+
+    background: #b9e5f4;
+
+    color: #247da5;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.forgot-button:hover {
+
+    background: #70c9e8;
+
+    color: white;
+
+}
+
+
+/* MODAL */
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.65);
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+}
+
+
+.modal.active {
+
+    display: flex;
+
+}
+
+
+.modal-content {
+
+    width: 450px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    position: relative;
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.4);
+
+}
+
+
+.modal-content h2 {
+
+    color: #202d3d;
+
+    margin-bottom: 15px;
+
+}
+
+
+.modal-content p {
+
+    color: #555;
+
+    line-height: 1.5;
+
+    margin-bottom: 20px;
+
+}
+
+
+.modal-content input {
+
+    width: 100%;
+
+    height: 55px;
+
+    border: 2px solid #ccc;
+
+    border-radius: 8px;
+
+    padding: 0 15px;
+
+    font-size: 17px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.close {
+
+    position: absolute;
+
+    top: 10px;
+
+    right: 15px;
+
+    border: none;
+
+    background: none;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    color: #555;
+
+}
+
+
+.recover-button {
+
+    width: 100%;
+
+    height: 55px;
+
+    background: #36b6e8;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 15px;
+
+    }
+
+
+    .app {
+
+        width: 100%;
+
+        min-height: 90vh;
+
+        border-radius: 35px;
+
+    }
+
+
+    .header {
+
+        height: 170px;
+
+    }
+
+
+    .header h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .login {
+
+        padding-top: 45px;
+
+    }
+
+
+    .login label {
+
+        font-size: 18px;
+
+    }
+
+
+    .login input {
+
+        height: 58px;
+
+    }
+
+
+    .modal-content {
+
+        width: 100%;
+
+    }
+
+}
