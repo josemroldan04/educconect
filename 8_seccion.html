@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materia Nueva</title>
+
+    <link rel="stylesheet" href="8_seccion.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<div class="telefono">
+
+    <!-- Encabezado -->
+    <header class="header">
+
+        <a href="index.html" class="home">
+            <i class="fa-solid fa-house"></i>
+        </a>
+
+        <h1>Materia Nueva</h1>
+
+        <!-- Espacio para mantener el título centrado -->
+        <div class="espacio"></div>
+
+    </header>
+
+    <!-- Contenido -->
+
+    <div class="contenido">
+
+        <div class="icono">
+            📒✏️
+        </div>
+
+        <form id="formulario">
+
+            <input
+                type="text"
+                id="materia"
+                placeholder="Nombre de la materia"
+                required>
+
+            <input
+                type="text"
+                id="profesor"
+                placeholder="Su nombre"
+                required>
+
+            <input
+                type="text"
+                id="codigo"
+                placeholder="Código de la materia"
+                required>
+
+            <button type="submit">
+                Crear
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+
+document.getElementById("formulario").addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    let materia=document.getElementById("materia").value;
+    let profesor=document.getElementById("profesor").value;
+    let codigo=document.getElementById("codigo").value;
+
+    alert(
+        "Materia creada correctamente.\n\n"+
+        "Materia: "+materia+
+        "\nProfesor: "+profesor+
+        "\nCódigo: "+codigo
+    );
+
+    this.reset();
+
+});
+
+</script>
+
+</body>
+</html>

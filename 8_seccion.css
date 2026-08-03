@@ -1,0 +1,166 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#222;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.telefono{
+    width:390px;
+    background:white;
+    border-radius:35px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.35);
+}
+
+/* =======================
+   ENCABEZADO
+======================= */
+
+.header{
+
+    height:95px;
+    background:#dfeef8;
+
+    display:grid;
+    grid-template-columns:60px 1fr 60px;
+
+    align-items:center;
+
+    padding:0 18px;
+
+}
+
+.home{
+
+    width:50px;
+    height:50px;
+
+    background:#59bfff;
+
+    border-radius:8px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#0b2d6b;
+    text-decoration:none;
+
+    font-size:24px;
+
+    transition:.3s;
+
+}
+
+.home:hover{
+
+    background:#38adff;
+
+}
+
+.header h1{
+
+    text-align:center;
+
+    font-size:34px;
+
+    font-weight:bold;
+
+    color:#000;
+
+}
+
+.placeholder{
+
+    width:50px;
+    height:50px;
+
+}
+
+/* =======================
+   CONTENIDO
+======================= */
+
+.contenido{
+
+    padding:35px;
+
+    text-align:center;
+
+}
+
+.icono{
+
+    font-size:120px;
+
+    margin-bottom:30px;
+
+}
+
+form{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+input{
+
+    width:100%;
+
+    padding:15px;
+
+    font-size:18px;
+
+    border:3px solid #8ee9ff;
+
+    border-radius:6px;
+
+    outline:none;
+
+}
+
+input:focus{
+
+    border-color:#29bfff;
+
+}
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:6px;
+
+    background:#8ee9ff;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#47d8ff;
+
+}

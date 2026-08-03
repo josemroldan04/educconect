@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notificaciones</title>
+<link rel="stylesheet" href="7_seccion.css">
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<div class="header">
+
+<button class="home" onclick="inicio()">🏠</button>
+
+<h1>Notificaciones</h1>
+
+</div>
+
+<div class="lista">
+
+<div class="notificacion" id="n1">
+<h3>Tienes un nuevo mensaje</h3>
+<p>Tienes un nuevo mensaje en la materia de Artística sin leer.</p>
+
+<div class="botones">
+<button onclick="leer('n1')">Marcar como leída</button>
+<button onclick="eliminar('n1')">Eliminar</button>
+</div>
+
+</div>
+
+<div class="notificacion" id="n2">
+<h3>Tarea no entregada</h3>
+<p>Tu tarea "Sombras" de Artística venció.</p>
+
+<div class="botones">
+<button onclick="leer('n2')">Marcar como leída</button>
+<button onclick="eliminar('n2')">Eliminar</button>
+</div>
+
+</div>
+
+<div class="notificacion" id="n3">
+<h3>Recordatorio</h3>
+<p>Te quedan 2 días para entregar el delineado de Artística.</p>
+
+<div class="botones">
+<button onclick="leer('n3')">Marcar como leída</button>
+<button onclick="eliminar('n3')">Eliminar</button>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function inicio(){
+alert("Volviendo al inicio...");
+}
+
+function leer(id){
+document.getElementById(id).style.background="#d8ffd8";
+}
+
+function eliminar(id){
+document.getElementById(id).remove();
+}
+
+</script>
+
+</body>
+</html>

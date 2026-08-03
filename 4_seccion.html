@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registrarse en EduConnect</title>
+<link rel="stylesheet" href="Cuarta_seccion.css">
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<div class="header">
+
+<button class="back" onclick="history.back()"> BACK</button>
+
+<h1>Registrarse en EduConnect</h1>
+
+</div>
+
+<form id="registro">
+
+<label>Estudiante o maestro</label>
+
+<div class="opciones">
+
+<select id="tipo" required>
+<option value="">Seleccione</option>
+<option>Estudiante</option>
+<option>Maestro</option>
+</select>
+
+</div>
+
+<label>Correo electrónico</label>
+
+<input
+type="email"
+id="correo"
+placeholder="ejemplo@gmail.com"
+required>
+
+<label>Crea una contraseña</label>
+
+<input
+type="password"
+id="password"
+placeholder="********"
+required>
+
+<label>Número de celular</label>
+
+<input
+type="tel"
+id="celular"
+placeholder="3001234567"
+maxlength="10"
+required>
+
+<label>Ingrese su PIN</label>
+
+<input
+type="password"
+id="pin"
+maxlength="4"
+placeholder="****"
+required>
+
+<button type="submit" class="registrar">
+Registrarse
+</button>
+
+</form>
+
+</div>
+
+<script>
+
+document.getElementById("registro").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let tipo=document.getElementById("tipo").value;
+let correo=document.getElementById("correo").value;
+let pass=document.getElementById("password").value;
+let celular=document.getElementById("celular").value;
+let pin=document.getElementById("pin").value;
+
+if(tipo==""){
+alert("Seleccione Estudiante o Maestro.");
+return;
+}
+
+if(celular.length!=10){
+alert("El celular debe tener 10 dígitos.");
+return;
+}
+
+if(pin.length!=4){
+alert("El PIN debe tener 4 dígitos.");
+return;
+}
+
+alert("Registro realizado correctamente.");
+
+});
+
+</script>
+
+</body>
+</html>
