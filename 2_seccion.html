@@ -11,7 +11,7 @@
 
     <title>Iniciar sesión - EduConnect</title>
 
-    <link rel="stylesheet" href="Segunda_seccion.css">
+    <link rel="stylesheet" href="2_seccion.css">
 </head>
 
 <body>
@@ -21,9 +21,9 @@
         <!-- ENCABEZADO -->
         <header class="header">
 
-            <div class="icono">
+            <a class="icono" href="1_seccion.html">
                 BACK
-            </div>
+            </a>
 
             <h1>
                 Inicia sesión en EduConnect
@@ -44,14 +44,14 @@
 
             <div class="roles">
 
-                <button 
+                <a class="entrar" href="5_seccion.html"
                     type="button"
                     class="role active"
                     id="estudianteBtn"
                     onclick="seleccionarRol('estudiante')"
                 >
                     Estudiante
-                </button>
+                </a>
 
                 <button 
                     type="button"
@@ -115,28 +115,15 @@
                 placeholder="Escribe tu PIN"
                 maxlength="6"
             >
+    <!-- OLVIDASTE LA CONTRASEÑA -->
 
-
-            <!-- BOTÓN INICIAR SESIÓN -->
-
-            <button 
-                type="button"
-                class="login-button"
-                onclick="iniciarSesion()"
-            >
-                Iniciar sesión
-            </button>
-
-
-            <!-- OLVIDASTE LA CONTRASEÑA -->
-
-            <button 
+            <a class="entrar" href="3_seccion.html" 
                 type="button"
                 class="forgot-button"
                 onclick="olvidastePassword()"
             >
                 ¿Olvidaste la contraseña?
-            </button>
+            </a>
 
         </section>
 

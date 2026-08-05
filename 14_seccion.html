@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tareas</title>
+<link rel="stylesheet" href="14_seccion.css">
+</head>
+
+<body>
+
+<div class="telefono">
+
+<header>
+
+<a class="entrar" href="12_seccion.html">
+    BACK
+</a>
+
+<h2>Tareas</h2>
+
+<a class="entrar" href="5_seccion.html">
+    🏠
+</a>
+
+</header>
+
+<div class="contenido">
+
+<h3>Paisaje - Fecha límite: 16/09/2025</h3>
+
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600" alt="Paisaje">
+
+<div class="descripcion">
+Realiza el dibujo con base en la muestra y aplica colores cálidos con delineado y degradado.
+</div>
+
+<div class="botones">
+
+<a class="entrar" href="15_seccion.html">
+✔
+</a>
+
+<a class="entrar" href="16_seccion.html">
+✖
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function inicio(){
+window.location.href="inicio.html";
+}
+
+function entregar(){
+
+let respuesta=confirm("¿Desea entregar esta tarea?");
+
+if(respuesta){
+alert("Tarea entregada correctamente.");
+}
+
+}
+
+function cancelar(){
+
+let respuesta=confirm("¿Cancelar la tarea?");
+
+if(respuesta){
+alert("La entrega fue cancelada.");
+}
+
+}
+
+</script>
+
+</body>
+</html>

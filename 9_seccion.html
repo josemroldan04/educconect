@@ -3,71 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Materias</title>
-
+<title>Materia</title>
 <link rel="stylesheet" href="9_seccion.css">
-
-<!-- Iconos -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
 </head>
+
 <body>
 
-<div class="telefono">
+<div class="contenedor">
 
-    <!-- Encabezado -->
+<div class="header">
 
-    <header>
+<a class="entrar" href="5_seccion.html">🏠</a>
 
-        <a href="index.html" class="home">
-            <i class="fa-solid fa-house"></i>
-        </a>
-
-        <div class="buscador">
-
-            <input
-            type="text"
-            placeholder="">
-
-            <i class="fa-solid fa-magnifying-glass"></i>
-
-        </div>
-
-    </header>
-
-    <!-- Lista de materias -->
-
-    <div class="lista">
-
-        <a href="religion.html" class="materia">
-
-            <i class="fa-regular fa-clock"></i>
-
-            <span>Religión</span>
-
-        </a>
-
-        <a href="tecnologia.html" class="materia">
-
-            <i class="fa-regular fa-clock"></i>
-
-            <span>Tecnología</span>
-
-        </a>
-
-        <a href="artistica.html" class="materia">
-
-            <i class="fa-regular fa-clock"></i>
-
-            <span>Artística</span>
-
-        </a>
-
-    </div>
+<div class="buscador">
+<input type="text" id="buscar" placeholder="Artística">
+<button onclick="buscarMateria()">🔍</button>
+</div>
 
 </div>
+
+<div class="contenido">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3163/3163478.png" class="imagen">
+
+<h1>Artística</h1>
+
+<input type="text" value="Profesor: Carlos Ramírez" readonly>
+
+<input type="text" value="Código: ART-101" readonly>
+
+<a class="entrar"href="11_seccion.html" onclick="entrarMateria()">
+Entrar a la materia
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+function inicio(){
+alert("Volviendo al inicio...");
+}
+
+function abrirMenu(){
+alert("Menú abierto.");
+}
+
+function buscarMateria(){
+
+let materia=document.getElementById("buscar").value;
+
+if(materia==""){
+alert("Escriba una materia.");
+}else{
+alert("Buscando: "+materia);
+}
+
+}
+
+function entrarMateria(){
+alert("Bienvenido a la materia de Artística.");
+}
+
+</script>
 
 </body>
 </html>

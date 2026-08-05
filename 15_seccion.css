@@ -1,6 +1,6 @@
-/* =========================
+/* ==========================
    ESTILOS GENERALES
-========================= */
+========================== */
 
 *{
     margin:0;
@@ -10,7 +10,7 @@
 }
 
 body{
-    background:#202020;
+    background:#222;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -23,16 +23,16 @@ body{
     background:#fff;
     border-radius:35px;
     overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,.35);
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
 }
 
-/* =========================
-        ENCABEZADO
-========================= */
+/* ==========================
+   ENCABEZADO
+========================== */
 
 .header{
     height:100px;
-    background:#dcecf8;
+    background:#dfeef9;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -40,22 +40,20 @@ body{
 }
 
 .header h1{
-    font-size:28px;
+    font-size:30px;
     font-weight:bold;
-    color:#000;
-    text-align:center;
 }
 
 .boton{
     width:55px;
     height:55px;
-    background:#59c8ff;
-    color:#0b3475;
+    background:#55c5ff;
     border-radius:8px;
     display:flex;
     justify-content:center;
     align-items:center;
     text-decoration:none;
+    color:#0b3d91;
     font-size:28px;
     transition:.3s;
 }
@@ -64,19 +62,22 @@ body{
     background:#2ea8ff;
 }
 
-/* =========================
-        CONTENIDO
-========================= */
+/* ==========================
+   CONTENIDO
+========================== */
 
 .contenido{
-    padding:25px;
+    padding:20px;
 }
 
 .contenido h2{
-    font-size:36px;
+    font-size:35px;
     margin-bottom:25px;
-    color:#000;
 }
+
+/* ==========================
+   LISTA
+========================== */
 
 .lista{
     display:flex;
@@ -88,76 +89,93 @@ body{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:15px;
-    border:2px solid #ddd;
+    border:2px solid #d8d8d8;
     border-radius:10px;
-    background:#fff;
+    padding:15px;
+    background:white;
 }
 
 .tarea span{
     font-size:20px;
-    font-weight:bold;
 }
 
-/* =========================
-      BOTONES ESTADO
-========================= */
+/* ==========================
+   BOTONES ESTADO
+========================== */
 
 .estado{
-    width:45px;
-    height:45px;
+    width:42px;
+    height:42px;
     border:none;
-    background:transparent;
-    font-size:28px;
+    background:none;
     cursor:pointer;
+    font-size:30px;
 }
 
-.verde{
-    color:#3bb54a;
+.completada{
+    color:#37b24d;
 }
 
-.gris{
-    color:#808080;
+.pendiente{
+    color:#777;
 }
 
-.rojo{
-    color:#e53935;
+.cancelada{
+    color:#d62828;
 }
 
-/* =========================
-      BOTÓN AGREGAR
-========================= */
+.estado:hover{
+    transform:scale(1.15);
+}
+
+/* ==========================
+   BOTÓN +
+========================== */
 
 .agregar{
-    width:110px;
-    height:110px;
-    margin:45px auto 0;
+
+    width:120px;
+    height:120px;
+
+    margin:45px auto;
+
     display:flex;
     justify-content:center;
     align-items:center;
-    text-decoration:none;
-    border:3px solid #59c8ff;
+
+    border:3px solid #57c9ff;
     border-radius:10px;
-    color:#59c8ff;
-    font-size:70px;
+
+    text-decoration:none;
+
+    color:#57c9ff;
+
+    font-size:80px;
+
     transition:.3s;
+
 }
 
 .agregar:hover{
-    background:#dff5ff;
+
+    background:#def6ff;
+
     transform:scale(1.05);
+
 }
 
-/* =========================
-       RESPONSIVE
-========================= */
+/* ==========================
+   RESPONSIVE
+========================== */
 
 @media(max-width:430px){
 
-    .telefono{
-        width:100%;
-        height:100vh;
-        border-radius:0;
-    }
+.telefono{
+
+width:100%;
+height:100vh;
+border-radius:0;
+
+}
 
 }

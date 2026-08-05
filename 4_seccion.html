@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Registrarse en EduConnect</title>
-<link rel="stylesheet" href="Cuarta_seccion.css">
+<link rel="stylesheet" href="4_seccion.css">
 </head>
 
 <body>
@@ -13,25 +13,33 @@
 
 <div class="header">
 
-<button class="back" onclick="history.back()"> BACK</button>
+<a class="entrar" href="1_seccion.html"> BACK</a>
 
 <h1>Registrarse en EduConnect</h1>
 
 </div>
 
-<form id="registro">
+ <div class="roles">
 
-<label>Estudiante o maestro</label>
+                <a class="entrar" href="5_seccion.html"
+                    type="button"
+                    class="role active"
+                    id="estudianteBtn"
+                    onclick="seleccionarRol('estudiante')"
+                >
+                    Estudiante
+                </a>
 
-<div class="opciones">
+                <button 
+                    type="button"
+                    class="role"
+                    id="maestroBtn"
+                    onclick="seleccionarRol('maestro')"
+                >
+                    Maestro
+                </button>
 
-<select id="tipo" required>
-<option value="">Seleccione</option>
-<option>Estudiante</option>
-<option>Maestro</option>
-</select>
-
-</div>
+            </div>
 
 <label>Correo electrónico</label>
 
@@ -66,11 +74,6 @@ id="pin"
 maxlength="4"
 placeholder="****"
 required>
-
-<button type="submit" class="registrar">
-Registrarse
-</button>
-
 </form>
 
 </div>

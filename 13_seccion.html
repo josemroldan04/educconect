@@ -1,105 +1,95 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tareas Artísticas</title>
-
-    <link rel="stylesheet" href="13_seccion.css">
-
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tareas Artísticas</title>
+<link rel="stylesheet" href="13_seccion.css">
 </head>
 
 <body>
 
-<div class="telefono">
-
-    <!-- Encabezado -->
+<div class="contenedor">
 
     <header class="header">
 
-        <a href="opciones.html" class="boton">
-            <i class="fa-solid fa-arrow-left"></i>
+        <a class="entrar" href="11_seccion.html">
+             BACK
         </a>
 
-        <h1>Tareas Artísticas</h1>
+        <h2>Tareas Artísticas</h2>
 
-        <a href="inicio.html" class="boton">
-            <i class="fa-solid fa-house"></i>
+        <a class="entrar" href="5_seccion.html">
+            🏠
         </a>
 
     </header>
 
-    <!-- Contenido -->
+    <div class="contenido">
 
-    <main class="contenido">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" class="icono">
 
-        <h2>Tus tareas</h2>
+        <h1>Tarea nueva</h1>
 
-        <div class="lista">
+        <form id="formulario">
 
-            <div class="tarea">
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Nombre de la tarea"
+                required>
 
-                <span>Colorear dibujo</span>
+            <input
+                type="date"
+                id="fecha"
+                required>
 
-                <button class="estado verde">
-                    <i class="fa-solid fa-check"></i>
-                </button>
+            <textarea
+                id="descripcion"
+                placeholder="Descripción"
+                required></textarea>
 
-            </div>
+            <button type="submit" class="agregar">
+                Agregar tarea
+            </button>
 
-            <div class="tarea">
+        </form>
 
-                <span>Delineado</span>
-
-                <button class="estado gris">
-                    <i class="fa-regular fa-square"></i>
-                </button>
-
-            </div>
-
-            <div class="tarea">
-
-                <span>Sombras</span>
-
-                <button class="estado rojo">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-
-            </div>
-
-            <div class="tarea">
-
-                <span>Paisaje</span>
-
-                <button class="estado gris">
-                    <i class="fa-regular fa-square"></i>
-                </button>
-
-            </div>
-
-            <div class="tarea">
-
-                <span>Biografía</span>
-
-                <button class="estado verde">
-                    <i class="fa-solid fa-check"></i>
-                </button>
-
-            </div>
-
-        </div>
-
-        <a href="agregar_tarea.html" class="agregar">
-
-            <i class="fa-solid fa-circle-plus"></i>
-
-        </a>
-
-    </main>
+    </div>
 
 </div>
+
+<script>
+
+function inicio(){
+    alert("Regresando al inicio...");
+}
+
+document.getElementById("formulario").addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    let nombre=document.getElementById("nombre").value;
+    let fecha=document.getElementById("fecha").value;
+    let descripcion=document.getElementById("descripcion").value;
+
+    if(nombre=="" || fecha=="" || descripcion==""){
+        alert("Complete todos los campos.");
+        return;
+    }
+
+    alert(
+        "Tarea agregada correctamente.\n\n"+
+        "Nombre: "+nombre+
+        "\nFecha: "+fecha+
+        "\nDescripción: "+descripcion
+    );
+
+    this.reset();
+
+});
+
+</script>
 
 </body>
 </html>

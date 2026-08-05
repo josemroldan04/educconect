@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artística</title>
+    <title>Chat Artística</title>
 
     <link rel="stylesheet" href="10_seccion.css">
 
-    <!-- Font Awesome -->
+    <!-- Iconos -->
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
@@ -20,60 +19,65 @@
     <!-- Encabezado -->
     <header class="header">
 
+        <!-- Botón Atrás -->
+        <a class="entrar" href="11_seccion.html">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <h1>Chat Artística</h1>
+
         <!-- Botón Inicio -->
-        <a href="materias.html" class="home">
+        <a class="entrar" href="5_seccion.html">
             <i class="fa-solid fa-house"></i>
         </a>
 
-        <!-- Barra de búsqueda -->
-        <div class="buscador">
-
-            <input
-                type="text"
-                value="Artística"
-                readonly>
-
-            <i class="fa-solid fa-magnifying-glass"></i>
-
-        </div>
-
     </header>
 
-    <!-- Contenido -->
+    <!-- Conversación -->
+    <main class="chat">
 
-    <main>
-
-        <!-- Botón Documento -->
-        <a href="documento_artistica.html" class="documento">
-            <i class="fa-regular fa-file-lines"></i>
-        </a>
-
-        <!-- Imagen -->
-        <div class="imagen">
-            <img src="artistica.png" alt="Artística">
+        <div class="mensaje enviado">
+            Hola profesor, tengo una duda sobre la actividad.
         </div>
 
-        <h1>Artística</h1>
+        <div class="mensaje recibido">
+            Claro, dime cuál es tu duda y con gusto te ayudo.
+        </div>
 
-        <div class="datos">
+        <div class="mensaje enviado">
+            ¿La pintura debe hacerse en cartulina?
+        </div>
 
-            <label>Nombre del profesor</label>
-
-            <input
-                type="text"
-                value="Juan Pérez"
-                readonly>
-
-            <label>Código de la materia</label>
-
-            <input
-                type="text"
-                value="ART101"
-                readonly>
-
+        <div class="mensaje recibido">
+            Sí. Debe realizarse en cartulina tamaño pliego y entregarse el viernes.
         </div>
 
     </main>
+
+    <!-- Barra inferior -->
+    <footer class="footer">
+
+        <button class="icono">
+            <i class="fa-solid fa-camera"></i>
+        </button>
+
+        <button class="icono">
+            <i class="fa-regular fa-image"></i>
+        </button>
+
+        <button class="icono">
+            <i class="fa-solid fa-microphone"></i>
+        </button>
+
+        <input
+            type="text"
+            placeholder="Escribe un mensaje...">
+
+        <button class="enviar">
+            <i class="fa-solid fa-paper-plane"></i>
+        </button>
+
+    </footer>
 
 </div>
 
