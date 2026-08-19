@@ -3,11 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <meta 
-        name="viewport" 
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Iniciar sesión - EduConnect</title>
 
@@ -16,167 +12,269 @@
 
 <body>
 
-    <main class="app">
+<div class="app">
 
-        <!-- ENCABEZADO -->
-        <header class="header">
+    <!-- ENCABEZADO -->
+    <header class="header">
 
-            <a class="icono" href="1_seccion.html">
-                BACK
-            </a>
+        <a class="back" href="1_seccion.html">
+            ‹ Back
+        </a>
 
-            <h1>
-                Inicia sesión en EduConnect
-            </h1>
+        <h1>
+            Inicia sesión en EduConnect
+        </h1>
 
-        </header>
-
-
-        <!-- FORMULARIO -->
-        <section class="login">
-
-            <h2>
-                Estudiante o maestro
-            </h2>
+    </header>
 
 
-            <!-- SELECCIONAR TIPO DE USUARIO -->
+    <!-- LOGIN -->
+    <main class="login">
 
-            <div class="roles">
+        <h2>Estudiante o maestro</h2>
 
-                <a class="entrar" href="5_seccion.html"
-                    type="button"
-                    class="role active"
-                    id="estudianteBtn"
-                    onclick="seleccionarRol('estudiante')"
-                >
-                    Estudiante
-                </a>
+        <!-- ROLES -->
+        <div class="roles">
 
-                <button 
-                    type="button"
-                    class="role"
-                    id="maestroBtn"
-                    onclick="seleccionarRol('maestro')"
-                >
-                    Maestro
-                </button>
-
-            </div>
-
-
-            <!-- CORREO -->
-
-            <label for="email">
-                Correo electrónico
-            </label>
-
-            <input 
-                type="email"
-                id="email"
-                placeholder="ejemplo@gmail.com"
-            >
-
-
-            <!-- CONTRASEÑA -->
-
-            <label for="password">
-                Contraseña
-            </label>
-
-            <div class="password-container">
-
-                <input 
-                    type="password"
-                    id="password"
-                    placeholder="Escribe tu contraseña"
-                >
-
-                <button 
-                    type="button"
-                    class="show-password"
-                    onclick="mostrarPassword()"
-                >
-                    👁️
-                </button>
-
-            </div>
-
-
-            <!-- PIN -->
-
-            <label for="pin">
-                Ingrese su PIN
-            </label>
-
-            <input 
-                type="password"
-                id="pin"
-                placeholder="Escribe tu PIN"
-                maxlength="6"
-            >
-    <!-- OLVIDASTE LA CONTRASEÑA -->
-
-            <a class="entrar" href="3_seccion.html" 
+            <button
                 type="button"
-                class="forgot-button"
-                onclick="olvidastePassword()"
-            >
-                ¿Olvidaste la contraseña?
-            </a>
+                class="role active"
+                id="estudianteBtn"
+                onclick="seleccionarRol('estudiante')">
 
-        </section>
+                Estudiante
 
-    </main>
-
-
-    <!-- VENTANA PARA RECUPERAR CONTRASEÑA -->
-
-    <div 
-        class="modal"
-        id="modalRecuperar"
-    >
-
-        <div class="modal-content">
-
-            <button 
-                class="close"
-                onclick="cerrarModal()"
-            >
-                ×
             </button>
 
-            <h2>
-                Recuperar contraseña
-            </h2>
+            <button
+                type="button"
+                class="role"
+                id="maestroBtn"
+                onclick="seleccionarRol('maestro')">
 
-            <p>
-                Ingresa tu correo electrónico y te enviaremos
-                instrucciones para recuperar tu contraseña.
-            </p>
+                Maestro
 
-            <input 
-                type="email"
-                id="emailRecuperar"
-                placeholder="Tu correo electrónico"
-            >
-
-            <button 
-                class="recover-button"
-                onclick="recuperarPassword()"
-            >
-                Enviar instrucciones
             </button>
 
         </div>
 
-    </div>
+
+        <!-- CORREO -->
+        <label for="email">
+            Correo electrónico
+        </label>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="ejemplo@gmail.com"
+        >
 
 
-    <!-- JAVASCRIPT -->
+        <!-- CONTRASEÑA -->
+        <label for="password">
+            Contraseña
+        </label>
 
-    <script src="script.js"></script>
+        <div class="password-container">
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Escribe tu contraseña"
+            >
+
+            <button
+                type="button"
+                class="show-password"
+                onclick="mostrarPassword()">
+
+                👁
+
+            </button>
+
+        </div>
+
+
+        <!-- PIN -->
+        <label for="pin">
+            Ingrese su PIN
+        </label>
+
+        <input
+            type="password"
+            id="pin"
+            placeholder="****"
+            maxlength="4"
+        >
+
+
+        <!-- INICIAR SESIÓN -->
+        <button
+            type="button"
+            class="login-button"
+            onclick="iniciarSesion()">
+
+            Iniciar sesión
+
+        </button>
+
+
+        <!-- OLVIDÓ CONTRASEÑA -->
+        <a
+            class="forgot-button"
+            href="3_seccion.html">
+
+            ¿Olvidaste la contraseña?
+
+        </a>
+
+    </main>
+
+</div>
+
+
+<script>
+
+let rolSeleccionado = "estudiante";
+
+
+function seleccionarRol(rol) {
+
+    rolSeleccionado = rol;
+
+    const estudiante =
+        document.getElementById("estudianteBtn");
+
+    const maestro =
+        document.getElementById("maestroBtn");
+
+    if (rol === "estudiante") {
+
+        estudiante.classList.add("active");
+        maestro.classList.remove("active");
+
+    } else {
+
+        maestro.classList.add("active");
+        estudiante.classList.remove("active");
+
+    }
+}
+
+
+function mostrarPassword() {
+
+    const password =
+        document.getElementById("password");
+
+    if (password.type === "password") {
+
+        password.type = "text";
+
+    } else {
+
+        password.type = "password";
+
+    }
+}
+
+
+function iniciarSesion() {
+
+    const correo =
+        document.getElementById("email").value.trim();
+
+    const password =
+        document.getElementById("password").value;
+
+    const pin =
+        document.getElementById("pin").value;
+
+
+    if (correo === "" ||
+        password === "" ||
+        pin === "") {
+
+        alert("Completa todos los campos.");
+
+        return;
+    }
+
+
+    if (pin.length !== 4) {
+
+        alert("El PIN debe tener 4 números.");
+
+        return;
+    }
+
+
+    const usuario =
+        JSON.parse(
+            localStorage.getItem("educonnectUsuario")
+        );
+
+
+    /*
+       Si ya existe un usuario registrado,
+       comprobamos sus datos.
+    */
+
+    if (usuario) {
+
+        if (
+            usuario.correo !== correo ||
+            usuario.password !== password ||
+            usuario.pin !== pin ||
+            usuario.rol !== rolSeleccionado
+        ) {
+
+            alert("Los datos ingresados no coinciden con el usuario registrado.");
+
+            return;
+        }
+
+    }
+
+
+    /*
+       Guardamos la sesión actual.
+    */
+
+    localStorage.setItem(
+        "educonnectSesion",
+        JSON.stringify({
+            correo: correo,
+            rol: rolSeleccionado
+        })
+    );
+
+
+    /*
+       Por ahora el estudiante va a la sección 5.
+       Cuando hagamos la versión del maestro,
+       conectaremos este botón con su menú.
+    */
+
+    if (rolSeleccionado === "estudiante") {
+
+        window.location.href = "5_seccion.html";
+
+    } else {
+
+        alert("Inicio de sesión como maestro.");
+
+        /*
+          Aquí conectaremos posteriormente
+          con la sección principal del maestro.
+        */
+
+    }
+
+}
+
+</script>
 
 </body>
-
 </html>

@@ -1,72 +1,179 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Materia</title>
-<link rel="stylesheet" href="9_seccion.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduConnect - Artística</title>
+
+    <link rel="stylesheet" href="9_seccion.css">
 </head>
 
 <body>
 
-<div class="contenedor">
+    <main class="telefono">
 
-<div class="header">
+        <!-- =========================
+             ENCABEZADO
+        ========================== -->
 
-<a class="entrar" href="5_seccion.html">🏠</a>
+        <header class="header">
 
-<div class="buscador">
-<input type="text" id="buscar" placeholder="Artística">
-<button onclick="buscarMateria()">🔍</button>
-</div>
+            <!-- Volver al menú -->
 
-</div>
+            <a
+                href="5_seccion.html"
+                class="inicio"
+                title="Volver al menú"
+                aria-label="Volver al menú">
+                🏠
+            </a>
 
-<div class="contenido">
 
-<img src="https://cdn-icons-png.flaticon.com/512/3163/3163478.png" class="imagen">
+            <!-- Buscador -->
 
-<h1>Artística</h1>
+            <div class="buscador">
 
-<input type="text" value="Profesor: Carlos Ramírez" readonly>
+                <input
+                    type="text"
+                    id="buscar"
+                    value="Artística"
+                    placeholder="Buscar materia..."
+                    autocomplete="off"
+                >
 
-<input type="text" value="Código: ART-101" readonly>
+                <button
+                    type="button"
+                    onclick="buscarMateria()"
+                    aria-label="Buscar">
+                    🔍
+                </button>
 
-<a class="entrar"href="11_seccion.html" onclick="entrarMateria()">
-Entrar a la materia
-</a>
+            </div>
 
-</div>
+        </header>
 
-</div>
 
-<script>
+        <!-- =========================
+             CONTENIDO
+        ========================== -->
 
-function inicio(){
-alert("Volviendo al inicio...");
-}
+        <section class="contenido">
 
-function abrirMenu(){
-alert("Menú abierto.");
-}
+            <!-- Imagen de la materia -->
 
-function buscarMateria(){
+            <div class="imagen-container">
 
-let materia=document.getElementById("buscar").value;
+                <img
+                    src="https://cdn-icons-png.flaticon.com/512/3163/3163478.png"
+                    class="imagen"
+                    alt="Artística"
+                >
 
-if(materia==""){
-alert("Escriba una materia.");
-}else{
-alert("Buscando: "+materia);
-}
+            </div>
 
-}
 
-function entrarMateria(){
-alert("Bienvenido a la materia de Artística.");
-}
+            <!-- Nombre -->
 
-</script>
+            <h1>Artística</h1>
+
+
+            <!-- Profesor -->
+
+            <div class="dato">
+
+                <span class="etiqueta">
+                    Profesor
+                </span>
+
+                <span>
+                    Carlos Ramírez
+                </span>
+
+            </div>
+
+
+            <!-- Código -->
+
+            <div class="dato">
+
+                <span class="etiqueta">
+                    Código
+                </span>
+
+                <span>
+                    ART-101
+                </span>
+
+            </div>
+
+
+            <!-- Entrar -->
+
+            <a
+                class="entrar"
+                href="11_seccion.html">
+                Entrar a la materia
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        /* ==========================================
+           BUSCAR MATERIA
+        ========================================== */
+
+        function buscarMateria() {
+
+            const buscador =
+                document.getElementById("buscar");
+
+            const materia =
+                buscador.value.trim();
+
+
+            if (materia === "") {
+
+                alert(
+                    "Escriba el nombre de una materia."
+                );
+
+                buscador.focus();
+
+                return;
+            }
+
+
+            if (
+                materia.toLowerCase() ===
+                "artística".toLowerCase()
+                ||
+                materia.toLowerCase() ===
+                "artistica"
+            ) {
+
+                alert(
+                    "Materia encontrada: Artística"
+                );
+
+            } else {
+
+                alert(
+                    "No se encontró la materia: " +
+                    materia
+                );
+
+            }
+
+        }
+
+    </script>
 
 </body>
+
 </html>

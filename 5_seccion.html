@@ -1,105 +1,246 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menu Principal</title>
-<link rel="stylesheet" href="5_seccion.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduConnect - Menú Principal</title>
+
+    <link rel="stylesheet" href="5_seccion.css">
 </head>
 
 <body>
 
-<div class="telefono">
+    <main class="telefono">
 
-<header>
+        <!-- =========================
+             ENCABEZADO
+        ========================== -->
 
-<div class="iconos">
-<a class="entrar" href="6_seccion.html">👤</a>
-<a class="entrar" href="7_seccion.html">🔔</a>
-</div>
+        <header class="encabezado">
 
-<input type="text" id="buscar" placeholder="Buscar materia...">
+            <div class="iconos">
 
-</header>
+                <!-- PERFIL -->
+                <a href="6_seccion.html"
+                   class="icono-btn"
+                   title="Perfil"
+                   aria-label="Perfil">
+                    👤
+                </a>
 
-<h1>Menu Principal</h1>
+                <!-- NOTIFICACIONES -->
+                <a href="7_seccion.html"
+                   class="icono-btn"
+                   title="Notificaciones"
+                   aria-label="Notificaciones">
+                    🔔
+                </a>
 
-<div class="grid">
+            </div>
 
-<div class="card nueva" onclick="agregarMateria()">
-<div class="icono">+</div>
-<a href="6_seccion.html" style="font-size: small;">Materia Nueva</a>
-</div>
 
-<div class="card">
-🖼️
-<p>Física</p>
-</div>
+            <!-- BUSCADOR -->
 
-<div class="card">
-🖼️
-<p>Química</p>
-</div>
+            <div class="buscador">
 
-<a class="card" href="9_seccion.html">
-🖼️
-<p>Artistica</p>
-</a>
+                <input
+                    type="text"
+                    id="buscar"
+                    placeholder="Buscar materia..."
+                    autocomplete="off"
+                >
 
-<div class="card">
-🖼️
-<p>Matemáticas</p>
-</div>
+                <span class="lupa">⌕</span>
 
-<div class="card">
-🖼️
-<p>Filosofía</p>
-</div>
+            </div>
 
-</div>
+        </header>
 
-</div>
 
-<script>
+        <!-- =========================
+             TÍTULO
+        ========================== -->
 
-const buscador=document.getElementById("buscar");
+        <h1>Menú Principal</h1>
 
-buscador.addEventListener("keyup",function(){
 
-let texto=this.value.toLowerCase();
+        <!-- =========================
+             MATERIAS
+        ========================== -->
 
-let cards=document.querySelectorAll(".card");
+        <section class="grid" id="materias">
 
-cards.forEach(card=>{
 
-if(card.innerText.toLowerCase().includes(texto))
-card.style.display="flex";
-else
-card.style.display="none";
+            <!-- MATERIA NUEVA -->
 
-});
+            <a href="8_seccion.html"
+               class="card nueva">
 
-});
+                <div class="icono-plus">
+                    +
+                </div>
 
-function agregarMateria(){
+                <p>Materia Nueva</p>
 
-let nombre=prompt("Nombre de la nueva materia:");
+            </a>
 
-if(nombre){
 
-let div=document.createElement("div");
+            <!-- FÍSICA -->
 
-div.className="card";
+            <a href="#"
+               class="card materia"
+               data-materia="Física">
 
-div.innerHTML="🖼️<p>"+nombre+"</p>";
+                <div class="imagen-materia">
+                    🖼️
+                </div>
 
-document.querySelector(".grid").appendChild(div);
+                <p>Física</p>
 
-}
+            </a>
 
-}
 
-</script>
+            <!-- QUÍMICA -->
+
+            <a href="#"
+               class="card materia"
+               data-materia="Química">
+
+                <div class="imagen-materia">
+                    🖼️
+                </div>
+
+                <p>Química</p>
+
+            </a>
+
+
+            <!-- ARTÍSTICA -->
+
+            <a href="9_seccion.html"
+               class="card materia"
+               data-materia="Artística">
+
+                <div class="imagen-materia">
+                    🖼️
+                </div>
+
+                <p>Artística</p>
+
+            </a>
+
+
+            <!-- MATEMÁTICAS -->
+
+            <a href="#"
+               class="card materia"
+               data-materia="Matemáticas">
+
+                <div class="imagen-materia">
+                    🖼️
+                </div>
+
+                <p>Matemáticas</p>
+
+            </a>
+
+
+            <!-- FILOSOFÍA -->
+
+            <a href="#"
+               class="card materia"
+               data-materia="Filosofía">
+
+                <div class="imagen-materia">
+                    🖼️
+                </div>
+
+                <p>Filosofía</p>
+
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /* =========================
+           BUSCADOR
+        ========================== */
+
+        const buscador = document.getElementById("buscar");
+
+        const materias =
+            document.querySelectorAll(".materia");
+
+
+        buscador.addEventListener("input", function () {
+
+            const texto =
+                this.value.toLowerCase().trim();
+
+
+            materias.forEach(function (materia) {
+
+                const nombre =
+                    materia
+                    .getAttribute("data-materia")
+                    .toLowerCase();
+
+
+                if (nombre.includes(texto)) {
+
+                    materia.style.display = "flex";
+
+                } else {
+
+                    materia.style.display = "none";
+
+                }
+
+            });
+
+        });
+
+
+        /* =========================
+           MATERIAS SIN SECCIÓN
+        ========================== */
+
+        materias.forEach(function (materia) {
+
+            materia.addEventListener("click", function (event) {
+
+                if (this.getAttribute("href") === "#") {
+
+                    event.preventDefault();
+
+                    const nombre =
+                        this.getAttribute("data-materia");
+
+
+                    alert(
+                        "La sección de " +
+                        nombre +
+                        " será conectada posteriormente."
+                    );
+
+                }
+
+            });
+
+        });
+
+    </script>
 
 </body>
+
 </html>

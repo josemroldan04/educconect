@@ -1,166 +1,342 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-    background:#222;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
+
+/* =========================================
+   FONDO GENERAL
+   IGUAL A TODAS LAS SECCIONES
+========================================= */
+
+body {
+
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #172234,
+        #3b78b8
+    );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
 }
 
-.telefono{
-    width:390px;
-    background:white;
-    border-radius:35px;
-    overflow:hidden;
-    box-shadow:0 8px 25px rgba(0,0,0,.35);
+
+/* =========================================
+   TELÉFONO
+========================================= */
+
+.telefono {
+
+    width: 380px;
+
+    height: 720px;
+
+    background: #fffef5;
+
+    border-radius: 45px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+
+    flex-direction: column;
 }
 
-/* =======================
+
+/* =========================================
    ENCABEZADO
-======================= */
+========================================= */
 
-.header{
+.header {
 
-    height:95px;
-    background:#dfeef8;
+    width: 100%;
 
-    display:grid;
-    grid-template-columns:60px 1fr 60px;
+    height: 85px;
 
-    align-items:center;
+    background: #dcecff;
 
-    padding:0 18px;
+    padding: 18px 20px;
 
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: relative;
 }
 
-.home{
 
-    width:50px;
-    height:50px;
+/* =========================================
+   BOTÓN INICIO
+========================================= */
 
-    background:#59bfff;
+.inicio {
 
-    border-radius:8px;
+    position: absolute;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    left: 20px;
 
-    color:#0b2d6b;
-    text-decoration:none;
+    width: 42px;
 
-    font-size:24px;
+    height: 42px;
 
-    transition:.3s;
+    display: flex;
 
+    justify-content: center;
+
+    align-items: center;
+
+    text-decoration: none;
+
+    font-size: 21px;
+
+    border-radius: 50%;
+
+    transition: 0.2s;
 }
 
-.home:hover{
 
-    background:#38adff;
+.inicio:hover {
 
+    background: rgba(
+        255,
+        255,
+        255,
+        0.7
+    );
+
+    transform: scale(1.05);
 }
 
-.header h1{
 
-    text-align:center;
+/* =========================================
+   TÍTULO
+========================================= */
 
-    font-size:34px;
+.header h1 {
 
-    font-weight:bold;
+    color: #202d3d;
 
-    color:#000;
+    font-size: 28px;
 
+    font-weight: 700;
+
+    text-align: center;
 }
 
-.placeholder{
 
-    width:50px;
-    height:50px;
-
-}
-
-/* =======================
+/* =========================================
    CONTENIDO
-======================= */
+========================================= */
 
-.contenido{
+.contenido {
 
-    padding:35px;
+    flex: 1;
 
-    text-align:center;
+    padding: 30px;
 
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    overflow-y: auto;
 }
 
-.icono{
 
-    font-size:120px;
+/* =========================================
+   ICONO
+========================================= */
 
-    margin-bottom:30px;
+.icono {
 
+    font-size: 95px;
+
+    margin-top: 15px;
+
+    margin-bottom: 30px;
+
+    line-height: 1;
 }
 
-form{
 
-    display:flex;
-    flex-direction:column;
+/* =========================================
+   FORMULARIO
+========================================= */
 
-    gap:20px;
+form {
 
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 17px;
 }
 
-input{
 
-    width:100%;
+/* =========================================
+   CAMPOS
+========================================= */
 
-    padding:15px;
+input {
 
-    font-size:18px;
+    width: 100%;
 
-    border:3px solid #8ee9ff;
+    height: 52px;
 
-    border-radius:6px;
+    padding: 12px 15px;
 
-    outline:none;
+    font-size: 16px;
 
+    color: #202d3d;
+
+    background: white;
+
+    border:
+        2px solid
+        #8ee9ff;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
 }
 
-input:focus{
 
-    border-color:#29bfff;
+input:focus {
 
+    border-color: #29bfff;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(41, 191, 255, 0.15);
 }
 
-button{
 
-    width:100%;
+input::placeholder {
 
-    padding:15px;
-
-    border:none;
-
-    border-radius:6px;
-
-    background:#8ee9ff;
-
-    color:white;
-
-    font-size:22px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
+    color: #777;
 }
 
-button:hover{
 
-    background:#47d8ff;
+/* =========================================
+   BOTÓN CREAR
+========================================= */
+
+.crear {
+
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #55c9ee,
+        #8ed6ed
+    );
+
+    color: white;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 6px
+        rgba(0, 150, 200, 0.35);
+
+    transition:
+        transform 0.2s,
+        background 0.2s;
+}
+
+
+.crear:hover {
+
+    transform: scale(1.02);
+
+    background: linear-gradient(
+        135deg,
+        #32b8e5,
+        #70cce7
+    );
+}
+
+
+.crear:active {
+
+    transform: scale(0.98);
+}
+
+
+/* =========================================
+   BARRA DE DESPLAZAMIENTO
+========================================= */
+
+.contenido::-webkit-scrollbar {
+
+    width: 0;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 450px) {
+
+    body {
+
+        padding: 0;
+    }
+
+
+    .telefono {
+
+        width: 100%;
+
+        height: 100vh;
+
+        border-radius: 0;
+    }
+
+
+    .contenido {
+
+        padding: 25px;
+    }
 
 }

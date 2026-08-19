@@ -1,89 +1,178 @@
-*{
-margin: 0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-background:#1f2530;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
+body {
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #172234,
+        #3b78b8
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.contenedor{
-width:380px;
-background:white;
-border-radius:30px;
-overflow:hidden;
-box-shadow:0 5px 20px rgba(0,0,0,.3);
+/* CELULAR */
+.app {
+    width: 380px;
+    height: 720px;
+
+    background: #fffef5;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.3);
 }
 
-.header{
-background:#dce9fa;
-padding:20px;
-height:180px;
+/* ENCABEZADO */
+.header {
+    height: 150px;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #e9f4fb
+    );
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
 }
 
-.back{
-background:none;
-border:none;
-color:#0077ff;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
+.back {
+    color: #138ed1;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
 }
 
-h1{
-margin-top:30px;
-font-size:28px;
-font-weight:bold;
+.header h1 {
+    font-size: 24px;
+
+    color: #111827;
 }
 
-form{
-padding:25px;
-display:flex;
-flex-direction:column;
+/* FORMULARIO */
+.formulario {
+    padding: 25px 22px;
+
+    display: flex;
+    flex-direction: column;
 }
 
-label{
-margin-top:18px;
-margin-bottom:8px;
-font-size:18px;
-font-weight:bold;
+/* LABEL */
+.formulario label {
+    margin-top: 12px;
+    margin-bottom: 7px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    color: #394553;
 }
 
-select,
-input{
-width:100%;
-height:50px;
-padding:10px;
-font-size:16px;
-border:2px solid #cfcfcf;
-border-radius:10px;
-outline:none;
+/* ROLES */
+.roles {
+    display: flex;
+
+    gap: 8px;
+
+    margin-bottom: 8px;
 }
 
-select:focus,
-input:focus{
-border-color:#2196f3;
+.role {
+    flex: 1;
+
+    height: 42px;
+
+    border: 2px solid #29a9e0;
+
+    border-radius: 7px;
+
+    background: #dff4fb;
+
+    color: #3687b0;
+
+    font-size: 14px;
+
+    cursor: pointer;
 }
 
-.registrar{
-margin-top:30px;
-height:50px;
-background:#2196f3;
-color:white;
-border:none;
-border-radius:10px;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-transition:.3s;
+.role.active {
+    background: #75cbea;
+
+    color: white;
+
+    box-shadow:
+        0 3px 8px rgba(0,150,200,0.3);
 }
 
-.registrar:hover{
-background:#0b7dda;
+/* INPUTS */
+.formulario input {
+    width: 100%;
+
+    height: 46px;
+
+    padding: 10px 13px;
+
+    font-size: 15px;
+
+    border: 2px solid #cfcfcf;
+
+    border-radius: 10px;
+
+    outline: none;
+}
+
+.formulario input:focus {
+    border-color: #2196f3;
+}
+
+/* REGISTRAR */
+.registrar {
+    width: 100%;
+
+    height: 50px;
+
+    margin-top: 25px;
+
+    background: #36b6e8;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.registrar:hover {
+    background: #0b7dda;
 }

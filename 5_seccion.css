@@ -1,99 +1,425 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-background:#20252c;
-display:flex;
-justify-content:center;
-padding:30px;
+
+/* =========================================
+   FONDO GENERAL
+   MISMO DE LA SECCIÓN 1
+========================================= */
+
+body {
+
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #172234,
+        #3b78b8
+    );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
 }
 
-.telefono{
-width:380px;
-background:white;
-border-radius:35px;
-overflow:hidden;
-box-shadow:0 0 20px rgba(0,0,0,.3);
+
+/* =========================================
+   PANTALLA DEL TELÉFONO
+   MISMO TAMAÑO DE LAS DEMÁS SECCIONES
+========================================= */
+
+.telefono {
+
+    width: 380px;
+
+    height: 720px;
+
+    background: #fffef5;
+
+    border-radius: 45px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+
+    flex-direction: column;
 }
 
-header{
-background:#dcecff;
-padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.encabezado {
+
+    width: 100%;
+
+    height: 85px;
+
+    background: #dcecff;
+
+    padding: 18px 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
 }
 
-.iconos{
-display:flex;
-gap:10px;
+
+/* =========================================
+   ICONOS
+========================================= */
+
+.iconos {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
 }
 
-.iconos button{
-width:45px;
-height:45px;
-border:none;
-background:#59b9ff;
-color:white;
-font-size:22px;
-border-radius:8px;
-cursor:pointer;
+
+.icono-btn {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-decoration: none;
+
+    font-size: 21px;
+
+    border-radius: 50%;
+
+    transition: 0.2s;
+
 }
 
-input{
-width:170px;
-padding:10px;
-border-radius:20px;
-border:2px solid #59b9ff;
-outline:none;
+
+.icono-btn:hover {
+
+    background: rgba(255, 255, 255, 0.7);
+
+    transform: scale(1.05);
 }
 
-h1{
-padding:20px;
-font-size:36px;
-font-weight:bold;
+
+/* =========================================
+   BUSCADOR
+========================================= */
+
+.buscador {
+
+    position: relative;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:18px;
-padding:20px;
+
+#buscar {
+
+    width: 150px;
+
+    height: 38px;
+
+    padding: 8px 32px 8px 13px;
+
+    border-radius: 20px;
+
+    border: 2px solid #202d3d;
+
+    outline: none;
+
+    background: white;
+
+    font-size: 13px;
 }
 
-.card{
-height:150px;
-background:#bde9ff;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-font-size:45px;
-cursor:pointer;
-transition:.3s;
-box-shadow:8px 8px 0 gray;
+
+#buscar:focus {
+
+    border-color: #59b9ff;
 }
 
-.card:hover{
-transform:scale(1.05);
+
+.lupa {
+
+    position: absolute;
+
+    right: 11px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 20px;
+
+    color: #202d3d;
+
+    pointer-events: none;
 }
 
-.card p{
-font-size:20px;
-margin-top:10px;
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+h1 {
+
+    padding:
+
+        25px
+
+        20px
+
+        15px;
+
+    font-size: 30px;
+
+    color: #202d3d;
+
+    font-weight: 700;
 }
 
-.nueva .icono{
-width:70px;
-height:70px;
-border:3px solid #4b6b8a;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:50px;
+
+/* =========================================
+   GRID DE MATERIAS
+========================================= */
+
+.grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+
+    padding:
+
+        15px
+
+        20px
+
+        25px;
+
+    overflow-y: auto;
+}
+
+
+/* Ocultar barra de desplazamiento */
+
+.grid::-webkit-scrollbar {
+
+    width: 0;
+}
+
+
+/* =========================================
+   TARJETAS
+========================================= */
+
+.card {
+
+    height: 145px;
+
+    background: #bde9ff;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    cursor: pointer;
+
+    border-radius: 3px;
+
+    box-shadow:
+        7px 7px 0 #858585;
+
+    transition:
+
+        transform 0.2s ease,
+
+        box-shadow 0.2s ease;
+}
+
+
+.card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        7px 10px 0 #858585;
+}
+
+
+.card:active {
+
+    transform: translateY(2px);
+
+    box-shadow:
+        4px 4px 0 #858585;
+}
+
+
+/* =========================================
+   ICONO DE LAS MATERIAS
+========================================= */
+
+.imagen-materia {
+
+    width: 70px;
+
+    height: 70px;
+
+    background: #59b9df;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 34px;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   NOMBRE DE LA MATERIA
+========================================= */
+
+.card p {
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    color: white;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   MATERIA NUEVA
+========================================= */
+
+.nueva {
+
+    background: #a8bdd7;
+}
+
+
+.icono-plus {
+
+    width: 60px;
+
+    height: 60px;
+
+    border:
+
+        3px solid
+
+        #40566d;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 45px;
+
+    color: #40566d;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   ADAPTACIÓN PARA PANTALLAS PEQUEÑAS
+========================================= */
+
+@media (max-width: 450px) {
+
+    body {
+
+        padding: 0;
+    }
+
+
+    .telefono {
+
+        width: 100%;
+
+        height: 100vh;
+
+        border-radius: 0;
+    }
+
+
+    .encabezado {
+
+        padding:
+            18px
+
+            15px;
+    }
+
+
+    #buscar {
+
+        width: 145px;
+    }
+
+
+    .grid {
+
+        gap: 15px;
+
+        padding:
+            15px;
+    }
+
+
+    .card {
+
+        height: 140px;
+    }
+
 }

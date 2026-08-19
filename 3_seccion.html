@@ -1,112 +1,185 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olvidaste Tu Contraseña</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Recuperar contraseña</title>
+
     <link rel="stylesheet" href="3_seccion.css">
+
 </head>
+
 <body>
 
-<div class="contenedor">
+<div class="app">
 
-    <div class="header">
+    <!-- ENCABEZADO -->
 
-        <a class="entrar" href="2_seccion.html">
-            BACK
+    <header class="header">
+
+        <a
+            class="back"
+            href="2_seccion.html">
+
+            ‹ Back
+
         </a>
 
-        <h1>Olvidaste Tu Contraseña</h1>
+        <h1>
+            Olvidaste tu contraseña
+        </h1>
 
-    </div>
+    </header>
 
-    <form id="formulario">
 
-        <label>Correo electrónico</label>
+    <!-- FORMULARIO -->
+
+    <main class="formulario">
+
+        <label for="correo">
+            Correo electrónico
+        </label>
+
         <input
             type="email"
             id="correo"
             placeholder="ejemplo@gmail.com"
-            required
         >
 
-        <label>Nueva contraseña</label>
+
+        <label for="pass1">
+            Nueva contraseña
+        </label>
+
         <input
             type="password"
             id="pass1"
             placeholder="********"
-            required
         >
 
-        <label>Confirme la contraseña</label>
+
+        <label for="pass2">
+            Confirme la contraseña
+        </label>
+
         <input
             type="password"
             id="pass2"
             placeholder="********"
-            required
         >
 
-        <label>Confirme su PIN</label>
+
+        <label for="pin">
+            Confirme su PIN
+        </label>
+
         <input
             type="password"
             id="pin"
             maxlength="4"
             placeholder="****"
-            required
         >
 
-        <a class="entrar" href="4_seccion.html"
-            type="button"
-            class="registrarse"
-            onclick="registrarse()">
-            Registrarse
-    </a>
 
-        <a class="entrar" href="2_seccion.html"
-            type="submit"
-            class="continuar">
+        <button
+            class="continuar"
+            type="button"
+            onclick="actualizarPassword()">
+
             Continuar
-        </a>
-    </form>
+
+        </button>
+
+    </main>
 
 </div>
 
+
 <script>
 
-function registrarse(){
+function actualizarPassword() {
 
-let correo=document.getElementById("correo").value;
+    const correo =
+        document.getElementById("correo").value.trim();
 
-if(correo==""){
-alert("Ingrese un correo.");
-return;
+    const pass1 =
+        document.getElementById("pass1").value;
+
+    const pass2 =
+        document.getElementById("pass2").value;
+
+    const pin =
+        document.getElementById("pin").value;
+
+
+    if (
+        correo === "" ||
+        pass1 === "" ||
+        pass2 === "" ||
+        pin === ""
+    ) {
+
+        alert("Completa todos los campos.");
+
+        return;
+    }
+
+
+    if (pass1 !== pass2) {
+
+        alert("Las contraseñas no coinciden.");
+
+        return;
+    }
+
+
+    if (pin.length !== 4) {
+
+        alert("El PIN debe tener 4 números.");
+
+        return;
+    }
+
+
+    const usuario =
+        JSON.parse(
+            localStorage.getItem("educonnectUsuario")
+        );
+
+
+    if (usuario && usuario.correo !== correo) {
+
+        alert("El correo no coincide con el usuario registrado.");
+
+        return;
+    }
+
+
+    if (usuario) {
+
+        usuario.password = pass1;
+        usuario.pin = pin;
+
+        localStorage.setItem(
+            "educonnectUsuario",
+            JSON.stringify(usuario)
+        );
+
+    }
+
+
+    alert("Contraseña actualizada correctamente.");
+
+    window.location.href = "2_seccion.html";
+
 }
-
-alert("Registro exitoso.");
-
-}
-
-document.getElementById("formulario").addEventListener("submit",function(e){
-
-e.preventDefault();
-
-let p1=document.getElementById("pass1").value;
-let p2=document.getElementById("pass2").value;
-let pin=document.getElementById("pin").value;
-
-if(p1!=p2){
-alert("Las contraseñas no coinciden.");
-return;
-}
-
-if(pin.length!=4){
-alert("El PIN debe tener 4 números.");
-return;
-}
-
-alert("Contraseña actualizada correctamente.");
-
-});
 
 </script>
 

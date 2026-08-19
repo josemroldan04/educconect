@@ -1,94 +1,229 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materia Nueva</title>
+
+    <title>EduConnect - Nueva Materia</title>
 
     <link rel="stylesheet" href="8_seccion.css">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
 
-<div class="telefono">
+    <main class="telefono">
 
-    <!-- Encabezado -->
-    <header class="header">
+        <!-- =========================
+             ENCABEZADO
+        ========================== -->
 
-        <a class="entrar" href="5_seccion.html">
-            <i class="fa-solid fa-house"></i>
-        </a>
+        <header class="header">
 
-        <h1>Materia Nueva</h1>
-
-        <!-- Espacio para mantener el título centrado -->
-        <div class="espacio"></div>
-
-    </header>
-
-    <!-- Contenido -->
-
-    <div class="contenido">
-
-        <div class="icono">
-            📒✏️
-        </div>
-
-        <form id="formulario">
-
-            <input
-                type="text"
-                id="materia"
-                placeholder="Nombre de la materia"
-                required>
-
-            <input
-                type="text"
-                id="profesor"
-                placeholder="Su nombre"
-                required>
-
-            <input
-                type="text"
-                id="codigo"
-                placeholder="Código de la materia"
-                required>
-
-            <a class="entrar" href="5_seccion.html" type="submit">
-                Crear
+            <!-- Volver al menú -->
+            <a
+                class="inicio"
+                href="5_seccion.html"
+                title="Volver al menú"
+                aria-label="Volver al menú">
+                🏠
             </a>
 
-        </form>
+            <h1>Materia Nueva</h1>
 
-    </div>
+        </header>
 
-</div>
 
-<script>
+        <!-- =========================
+             CONTENIDO
+        ========================== -->
 
-document.getElementById("formulario").addEventListener("submit",function(e){
+        <section class="contenido">
 
-    e.preventDefault();
+            <div class="icono">
+                📒✏️
+            </div>
 
-    let materia=document.getElementById("materia").value;
-    let profesor=document.getElementById("profesor").value;
-    let codigo=document.getElementById("codigo").value;
 
-    alert(
-        "Materia creada correctamente.\n\n"+
-        "Materia: "+materia+
-        "\nProfesor: "+profesor+
-        "\nCódigo: "+codigo
-    );
+            <form id="formulario">
 
-    this.reset();
+                <!-- Nombre de materia -->
 
-});
+                <input
+                    type="text"
+                    id="materia"
+                    placeholder="Nombre de la materia"
+                    required
+                >
 
-</script>
+
+                <!-- Profesor -->
+
+                <input
+                    type="text"
+                    id="profesor"
+                    placeholder="Nombre del profesor"
+                    required
+                >
+
+
+                <!-- Código -->
+
+                <input
+                    type="text"
+                    id="codigo"
+                    placeholder="Código de la materia"
+                    required
+                >
+
+
+                <!-- Crear -->
+
+                <button
+                    type="submit"
+                    class="crear">
+                    Crear
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        /* ==========================================
+           CREAR MATERIA
+        ========================================== */
+
+        document
+            .getElementById("formulario")
+            .addEventListener("submit", function (e) {
+
+                e.preventDefault();
+
+
+                /* Obtener datos */
+
+                const materia =
+                    document
+                    .getElementById("materia")
+                    .value
+                    .trim();
+
+                const profesor =
+                    document
+                    .getElementById("profesor")
+                    .value
+                    .trim();
+
+                const codigo =
+                    document
+                    .getElementById("codigo")
+                    .value
+                    .trim();
+
+
+                /* Comprobar campos */
+
+                if (
+                    materia === "" ||
+                    profesor === "" ||
+                    codigo === ""
+                ) {
+
+                    alert(
+                        "Complete todos los campos."
+                    );
+
+                    return;
+                }
+
+
+                /* ==================================
+                   OBTENER MATERIAS EXISTENTES
+                ================================== */
+
+                const materias =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "educonnect_materias"
+                        )
+                    ) || [];
+
+
+                /* ==================================
+                   COMPROBAR CÓDIGO REPETIDO
+                ================================== */
+
+                const existe =
+                    materias.some(function (item) {
+
+                        return item.codigo === codigo;
+
+                    });
+
+
+                if (existe) {
+
+                    alert(
+                        "Ya existe una materia con ese código."
+                    );
+
+                    return;
+                }
+
+
+                /* ==================================
+                   CREAR OBJETO
+                ================================== */
+
+                const nuevaMateria = {
+
+                    nombre: materia,
+
+                    profesor: profesor,
+
+                    codigo: codigo
+
+                };
+
+
+                /* ==================================
+                   GUARDAR
+                ================================== */
+
+                materias.push(nuevaMateria);
+
+
+                localStorage.setItem(
+                    "educonnect_materias",
+                    JSON.stringify(materias)
+                );
+
+
+                /* ==================================
+                   CONFIRMACIÓN
+                ================================== */
+
+                alert(
+                    "Materia creada correctamente."
+                );
+
+
+                /* ==================================
+                   VOLVER AL MENÚ
+                ================================== */
+
+                window.location.href =
+                    "5_seccion.html";
+
+            });
+
+    </script>
 
 </body>
+
 </html>
