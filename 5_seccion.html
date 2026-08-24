@@ -1,246 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>EduConnect - Menú Principal</title>
+    <title>Menú Principal</title>
 
     <link rel="stylesheet" href="5_seccion.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-    <main class="telefono">
+<div class="telefono">
 
-        <!-- =========================
-             ENCABEZADO
-        ========================== -->
+    <!-- ENCABEZADO -->
+    <header class="header">
 
-        <header class="encabezado">
+        <div class="iconos">
 
-            <div class="iconos">
+            <a class="boton-icono" href="6_seccion.html">
+                <i class="fa-solid fa-user"></i>
+            </a>
 
-                <!-- PERFIL -->
-                <a href="6_seccion.html"
-                   class="icono-btn"
-                   title="Perfil"
-                   aria-label="Perfil">
-                    👤
-                </a>
+            <a class="boton-icono" href="7_seccion.html">
+                <i class="fa-solid fa-bell"></i>
+            </a>
 
-                <!-- NOTIFICACIONES -->
-                <a href="7_seccion.html"
-                   class="icono-btn"
-                   title="Notificaciones"
-                   aria-label="Notificaciones">
-                    🔔
-                </a>
+        </div>
 
+        <input
+            type="text"
+            id="buscar"
+            placeholder="Buscar materia...">
+
+    </header>
+
+
+    <!-- TÍTULO -->
+    <h1>Menú Principal</h1>
+
+
+    <!-- MATERIAS -->
+    <main class="grid">
+
+        <!-- MATERIA NUEVA -->
+        <a class="card nueva" href="8_seccion.html">
+
+            <div class="icono-mas">
+                <i class="fa-solid fa-plus"></i>
             </div>
 
+            <p>Materia Nueva</p>
 
-            <!-- BUSCADOR -->
+        </a>
 
-            <div class="buscador">
 
-                <input
-                    type="text"
-                    id="buscar"
-                    placeholder="Buscar materia..."
-                    autocomplete="off"
-                >
+        <!-- FÍSICA -->
+        <a class="card" href="18_seccion.html">
 
-                <span class="lupa">⌕</span>
-
+            <div class="icono-materia">
+                <i class="fa-solid fa-atom"></i>
             </div>
 
-        </header>
+            <p>Física</p>
+
+        </a>
 
 
-        <!-- =========================
-             TÍTULO
-        ========================== -->
+        <!-- QUÍMICA -->
+        <a class="card" href="27_seccion.html">
 
-        <h1>Menú Principal</h1>
+            <div class="icono-materia">
+                <i class="fa-solid fa-flask"></i>
+            </div>
 
+            <p>Química</p>
 
-        <!-- =========================
-             MATERIAS
-        ========================== -->
-
-        <section class="grid" id="materias">
+        </a>
 
 
-            <!-- MATERIA NUEVA -->
+        <!-- ARTÍSTICA -->
+        <a class="card" href="9_seccion.html">
 
-            <a href="8_seccion.html"
-               class="card nueva">
+            <div class="icono-materia">
+                <i class="fa-solid fa-palette"></i>
+            </div>
 
-                <div class="icono-plus">
-                    +
-                </div>
+            <p>Artística</p>
 
-                <p>Materia Nueva</p>
-
-            </a>
+        </a>
 
 
-            <!-- FÍSICA -->
+        <!-- MATEMÁTICAS -->
+        <div class="card">
 
-            <a href="#"
-               class="card materia"
-               data-materia="Física">
+            <div class="icono-materia">
+                <i class="fa-solid fa-square-root-variable"></i>
+            </div>
 
-                <div class="imagen-materia">
-                    🖼️
-                </div>
+            <p>Matemáticas</p>
 
-                <p>Física</p>
-
-            </a>
+        </div>
 
 
-            <!-- QUÍMICA -->
+        <!-- FILOSOFÍA -->
+        <div class="card">
 
-            <a href="#"
-               class="card materia"
-               data-materia="Química">
+            <div class="icono-materia">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
 
-                <div class="imagen-materia">
-                    🖼️
-                </div>
+            <p>Filosofía</p>
 
-                <p>Química</p>
-
-            </a>
-
-
-            <!-- ARTÍSTICA -->
-
-            <a href="9_seccion.html"
-               class="card materia"
-               data-materia="Artística">
-
-                <div class="imagen-materia">
-                    🖼️
-                </div>
-
-                <p>Artística</p>
-
-            </a>
-
-
-            <!-- MATEMÁTICAS -->
-
-            <a href="#"
-               class="card materia"
-               data-materia="Matemáticas">
-
-                <div class="imagen-materia">
-                    🖼️
-                </div>
-
-                <p>Matemáticas</p>
-
-            </a>
-
-
-            <!-- FILOSOFÍA -->
-
-            <a href="#"
-               class="card materia"
-               data-materia="Filosofía">
-
-                <div class="imagen-materia">
-                    🖼️
-                </div>
-
-                <p>Filosofía</p>
-
-            </a>
-
-        </section>
+        </div>
 
     </main>
 
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
-
-    <script>
-
-        /* =========================
-           BUSCADOR
-        ========================== */
-
-        const buscador = document.getElementById("buscar");
-
-        const materias =
-            document.querySelectorAll(".materia");
+</div>
 
 
-        buscador.addEventListener("input", function () {
+<script>
 
-            const texto =
-                this.value.toLowerCase().trim();
+const buscador = document.getElementById("buscar");
 
+buscador.addEventListener("keyup", function(){
 
-            materias.forEach(function (materia) {
+    const texto = this.value.toLowerCase();
 
-                const nombre =
-                    materia
-                    .getAttribute("data-materia")
-                    .toLowerCase();
+    const cards = document.querySelectorAll(".card");
 
+    cards.forEach(card => {
 
-                if (nombre.includes(texto)) {
+        const nombre = card.innerText.toLowerCase();
 
-                    materia.style.display = "flex";
+        if(nombre.includes(texto)){
+            card.style.display = "flex";
+        }else{
+            card.style.display = "none";
+        }
 
-                } else {
+    });
 
-                    materia.style.display = "none";
+});
 
-                }
-
-            });
-
-        });
-
-
-        /* =========================
-           MATERIAS SIN SECCIÓN
-        ========================== */
-
-        materias.forEach(function (materia) {
-
-            materia.addEventListener("click", function (event) {
-
-                if (this.getAttribute("href") === "#") {
-
-                    event.preventDefault();
-
-                    const nombre =
-                        this.getAttribute("data-materia");
-
-
-                    alert(
-                        "La sección de " +
-                        nombre +
-                        " será conectada posteriormente."
-                    );
-
-                }
-
-            });
-
-        });
-
-    </script>
+</script>
 
 </body>
-
 </html>

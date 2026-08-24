@@ -29,7 +29,6 @@ body {
     padding: 20px;
 
 }
-
 /* ==========================
         TELÉFONO
 ========================== */
@@ -43,9 +42,8 @@ body {
     border-radius:35px;
     overflow:hidden;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.35);
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
 }
-
 
 /* ==========================
         ENCABEZADO
@@ -53,30 +51,28 @@ body {
 
 .header{
     height:100px;
-
     background:#dcecf8;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
 
-    padding:18px;
+    padding:20px;
 }
 
-.iconos{
-    display:flex;
-    gap:10px;
+.header h1{
+    font-size:27px;
+    font-weight:bold;
+    text-align:center;
 }
 
+/* BOTONES */
 
-/* BOTONES DE PERFIL Y NOTIFICACIONES */
-
-.boton-icono{
-    width:45px;
-    height:45px;
+.boton{
+    width:55px;
+    height:55px;
 
     background:#59c8ff;
-
     color:#0b3475;
 
     border-radius:8px;
@@ -86,150 +82,79 @@ body {
     align-items:center;
 
     text-decoration:none;
-
-    font-size:21px;
+    font-size:28px;
 
     transition:.3s;
 }
 
-.boton-icono:hover{
+.boton:hover{
     background:#2ea8ff;
     transform:scale(1.05);
 }
 
-
 /* ==========================
-          BUSCADOR
+          CONTENIDO
 ========================== */
 
-.header input{
-    width:190px;
-    height:42px;
-
-    border:2px solid #59c8ff;
-
-    border-radius:20px;
-
-    padding:0 15px;
-
-    outline:none;
-
-    font-size:15px;
+.contenido{
+    padding:25px;
 }
 
-.header input:focus{
-    border-color:#2ea8ff;
+.contenido h2{
+    font-size:36px;
+    margin-bottom:25px;
 }
-
 
 /* ==========================
-          TÍTULO
+       LISTA DE TAREAS
 ========================== */
 
-h1{
-    padding:20px;
-
-    font-size:34px;
-
-    font-weight:bold;
-
-    color:#000;
-}
-
-
-/* ==========================
-       CUADRÍCULA
-========================== */
-
-.grid{
-    display:grid;
-
-    grid-template-columns:repeat(2, 1fr);
-
-    gap:18px;
-
-    padding:0 20px 20px;
-}
-
-
-/* ==========================
-        TARJETAS
-========================== */
-
-.card{
-    height:150px;
-
-    background:#bde9ff;
-
+.lista{
     display:flex;
     flex-direction:column;
+    gap:15px;
+}
 
-    justify-content:center;
+.tarea{
+    display:flex;
+    justify-content:space-between;
     align-items:center;
 
-    text-decoration:none;
+    padding:15px;
 
-    color:#000;
+    border:2px solid #ddd;
+    border-radius:10px;
 
-    cursor:pointer;
-
-    box-shadow:8px 8px 0 #8d8d8d;
-
-    transition:.3s;
+    background:#fff;
 }
 
-.card:hover{
-    transform:scale(1.04);
-}
-
-
-/* ICONOS DE LAS MATERIAS */
-
-.icono-materia{
-    font-size:52px;
-
-    color:#4b79c7;
-
-    margin-bottom:10px;
-}
-
-
-/* NOMBRE DE LA MATERIA */
-
-.card p{
-    font-size:20px;
-
+.tarea span{
+    font-size:18px;
     font-weight:bold;
 }
 
-
 /* ==========================
-       MATERIA NUEVA
+      ESTADOS DE TAREAS
 ========================== */
 
-.nueva{
-    background:#bde9ff;
-}
-
-.icono-mas{
-    width:70px;
-    height:70px;
-
-    border:3px solid #4b6b8a;
-
-    border-radius:50%;
+.estado{
+    width:45px;
+    height:45px;
 
     display:flex;
     justify-content:center;
     align-items:center;
 
-    font-size:40px;
-
-    color:#4b6b8a;
-
-    margin-bottom:8px;
+    font-size:28px;
 }
 
+.completada{
+    color:#3bb54a;
+}
+
+.cancelada{
+    color:#e53935;
+}
 
 /* ==========================
          RESPONSIVE
@@ -240,7 +165,6 @@ h1{
     .telefono{
         width:100%;
         height:100vh;
-
         border-radius:0;
     }
 

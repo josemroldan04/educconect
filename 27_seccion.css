@@ -37,15 +37,11 @@ body {
 .telefono{
     width:390px;
     height:780px;
-
     background:#fff;
-
     border-radius:35px;
     overflow:hidden;
-
     box-shadow:0 10px 25px rgba(0,0,0,.35);
 }
-
 
 /* ==========================
         ENCABEZADO
@@ -53,7 +49,6 @@ body {
 
 .header{
     height:100px;
-
     background:#dcecf8;
 
     display:flex;
@@ -63,20 +58,13 @@ body {
     padding:18px;
 }
 
-.iconos{
-    display:flex;
-    gap:10px;
-}
+/* BOTÓN DE INICIO */
 
-
-/* BOTONES DE PERFIL Y NOTIFICACIONES */
-
-.boton-icono{
-    width:45px;
-    height:45px;
+.boton{
+    width:55px;
+    height:55px;
 
     background:#59c8ff;
-
     color:#0b3475;
 
     border-radius:8px;
@@ -86,150 +74,136 @@ body {
     align-items:center;
 
     text-decoration:none;
-
-    font-size:21px;
+    font-size:26px;
 
     transition:.3s;
 }
 
-.boton-icono:hover{
+.boton:hover{
     background:#2ea8ff;
     transform:scale(1.05);
 }
 
-
 /* ==========================
-          BUSCADOR
+         BUSCADOR
 ========================== */
 
-.header input{
-    width:190px;
-    height:42px;
+.buscador{
+    display:flex;
+    align-items:center;
+}
+
+.buscador input{
+    width:210px;
+    height:45px;
 
     border:2px solid #59c8ff;
-
-    border-radius:20px;
+    border-radius:20px 0 0 20px;
 
     padding:0 15px;
 
+    font-size:16px;
     outline:none;
-
-    font-size:15px;
 }
 
-.header input:focus{
-    border-color:#2ea8ff;
+.buscador button{
+    width:50px;
+    height:45px;
+
+    border:none;
+
+    background:#59c8ff;
+    color:white;
+
+    border-radius:0 20px 20px 0;
+
+    font-size:18px;
+    cursor:pointer;
 }
 
+.buscador button:hover{
+    background:#2ea8ff;
+}
 
 /* ==========================
-          TÍTULO
+          CONTENIDO
 ========================== */
 
-h1{
-    padding:20px;
-
-    font-size:34px;
-
-    font-weight:bold;
-
-    color:#000;
+.contenido{
+    padding:35px 25px;
+    text-align:center;
 }
 
+/* ICONO DE QUÍMICA */
 
-/* ==========================
-       CUADRÍCULA
-========================== */
+.imagen{
+    width:180px;
+    height:180px;
 
-.grid{
-    display:grid;
-
-    grid-template-columns:repeat(2, 1fr);
-
-    gap:18px;
-
-    padding:0 20px 20px;
-}
-
-
-/* ==========================
-        TARJETAS
-========================== */
-
-.card{
-    height:150px;
-
-    background:#bde9ff;
+    margin:10px auto 25px;
 
     display:flex;
-    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 
+    background:#dff5ff;
+    border-radius:20px;
+
+    font-size:90px;
+    color:#4b79c7;
+}
+
+/* TÍTULO */
+
+.contenido h1{
+    font-size:38px;
+    margin-bottom:30px;
+}
+
+/* INFORMACIÓN */
+
+.informacion{
+    width:100%;
+
+    padding:16px;
+    margin:15px 0;
+
+    border:2px solid #ddd;
+    border-radius:10px;
+
+    text-align:left;
+    font-size:18px;
+}
+
+/* BOTÓN ENTRAR */
+
+.entrar-materia{
+    width:100%;
+    height:55px;
+
+    margin-top:30px;
+
+    background:#59c8ff;
+    color:white;
+
+    border-radius:10px;
+
+    display:flex;
     justify-content:center;
     align-items:center;
 
     text-decoration:none;
 
-    color:#000;
-
-    cursor:pointer;
-
-    box-shadow:8px 8px 0 #8d8d8d;
+    font-size:20px;
+    font-weight:bold;
 
     transition:.3s;
 }
 
-.card:hover{
-    transform:scale(1.04);
+.entrar-materia:hover{
+    background:#2ea8ff;
+    transform:scale(1.02);
 }
-
-
-/* ICONOS DE LAS MATERIAS */
-
-.icono-materia{
-    font-size:52px;
-
-    color:#4b79c7;
-
-    margin-bottom:10px;
-}
-
-
-/* NOMBRE DE LA MATERIA */
-
-.card p{
-    font-size:20px;
-
-    font-weight:bold;
-}
-
-
-/* ==========================
-       MATERIA NUEVA
-========================== */
-
-.nueva{
-    background:#bde9ff;
-}
-
-.icono-mas{
-    width:70px;
-    height:70px;
-
-    border:3px solid #4b6b8a;
-
-    border-radius:50%;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    font-size:40px;
-
-    color:#4b6b8a;
-
-    margin-bottom:8px;
-}
-
 
 /* ==========================
          RESPONSIVE
@@ -240,7 +214,6 @@ h1{
     .telefono{
         width:100%;
         height:100vh;
-
         border-radius:0;
     }
 
