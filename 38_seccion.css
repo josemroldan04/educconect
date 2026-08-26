@@ -30,7 +30,6 @@ body {
 
 }
 
-
 /* ==========================
         TELÉFONO
 ========================== */
@@ -45,11 +44,7 @@ body {
     overflow:hidden;
 
     box-shadow:0 10px 25px rgba(0,0,0,.4);
-
-    display:flex;
-    flex-direction:column;
 }
-
 
 /* ==========================
         ENCABEZADO
@@ -58,7 +53,7 @@ body {
 .header{
     height:100px;
 
-    background:#dfeef9;
+    background:#dcecf8;
 
     display:flex;
     justify-content:space-between;
@@ -68,19 +63,19 @@ body {
 }
 
 .header h1{
-    font-size:30px;
+    font-size:25px;
     font-weight:bold;
+    text-align:center;
 }
 
+/* BOTONES */
 
-/* PERFIL */
-
-.perfil{
+.boton{
     width:55px;
     height:55px;
 
-    background:#55c5ff;
-    color:#0b3d91;
+    background:#59c8ff;
+    color:#0b3475;
 
     border-radius:8px;
 
@@ -89,158 +84,98 @@ body {
     align-items:center;
 
     text-decoration:none;
-    font-size:26px;
+    font-size:28px;
 
     transition:.3s;
 }
 
-.perfil:hover{
+.boton:hover{
     background:#2ea8ff;
     transform:scale(1.05);
 }
-
-
-/* ==========================
-          BUSCADOR
-========================== */
-
-.buscador{
-    display:flex;
-
-    padding:15px 20px;
-
-    background:#fff;
-}
-
-.buscador input{
-    flex:1;
-
-    height:45px;
-
-    border:2px solid #59c8ff;
-    border-right:none;
-
-    border-radius:20px 0 0 20px;
-
-    padding:0 15px;
-
-    outline:none;
-
-    font-size:16px;
-}
-
-.buscador button{
-    width:50px;
-
-    border:none;
-
-    background:#59c8ff;
-    color:white;
-
-    border-radius:0 20px 20px 0;
-
-    font-size:18px;
-
-    cursor:pointer;
-}
-
-.buscador button:hover{
-    background:#2ea8ff;
-}
-
 
 /* ==========================
           CONTENIDO
 ========================== */
 
 .contenido{
-    flex:1;
-
-    padding:10px 20px;
-
-    overflow-y:auto;
+    padding:25px;
 }
 
+.contenido h2{
+    font-size:36px;
+    margin-bottom:25px;
+}
 
 /* ==========================
-          MATERIAS
+       LISTA DE TAREAS
 ========================== */
 
-.materias{
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:20px;
-}
-
-
-.materia{
-    height:160px;
-
-    border:3px solid #59c8ff;
-    border-radius:15px;
-
-    background:#fff;
-
+.lista{
     display:flex;
     flex-direction:column;
-
-    justify-content:center;
-    align-items:center;
-
-    text-decoration:none;
-    color:#000;
-
-    transition:.3s;
+    gap:15px;
 }
 
-
-.materia:hover{
-    background:#dff5ff;
-
-    transform:scale(1.03);
-}
-
-
-.icono-materia{
-    font-size:55px;
-
-    color:#4b79c7;
-
-    margin-bottom:12px;
-}
-
-
-.materia span{
-    font-size:18px;
-
-    font-weight:bold;
-
-    text-align:center;
-}
-
-
-/* ==========================
-       BARRA INFERIOR
-========================== */
-
-.footer{
-    height:75px;
-
-    border-top:2px solid #eee;
-
+.tarea{
     display:flex;
-    justify-content:space-around;
+    justify-content:space-between;
     align-items:center;
+
+    padding:15px;
+
+    border:2px solid #ddd;
+    border-radius:10px;
 
     background:#fff;
 }
 
+.tarea span{
+    font-size:17px;
+    font-weight:bold;
+}
 
-.footer-icon{
-    width:55px;
-    height:55px;
+/* ==========================
+      ESTADOS DE TAREAS
+========================== */
+
+.estado{
+    width:45px;
+    height:45px;
+
+    border:none;
+    background:transparent;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+    font-size:28px;
+}
+
+.completada{
+    color:#3bb54a;
+}
+
+.cancelada{
+    color:#e53935;
+}
+
+.pendiente{
+    color:#808080;
+    cursor:pointer;
+}
+
+/* ==========================
+      BOTÓN AGREGAR
+========================== */
+
+.agregar{
+    width:100px;
+    height:100px;
+
+    margin:35px auto 0;
 
     display:flex;
     justify-content:center;
@@ -248,29 +183,19 @@ body {
 
     text-decoration:none;
 
-    font-size:25px;
-
-    color:#777;
-
+    border:3px solid #59c8ff;
     border-radius:10px;
+
+    color:#59c8ff;
+    font-size:65px;
 
     transition:.3s;
 }
 
-
-.footer-icon:hover{
+.agregar:hover{
     background:#dff5ff;
-
-    color:#3b79c7;
+    transform:scale(1.05);
 }
-
-
-.footer-icon.activo{
-    background:#bfeeff;
-
-    color:#0b3d91;
-}
-
 
 /* ==========================
          RESPONSIVE

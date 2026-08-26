@@ -44,10 +44,7 @@ body {
     border-radius:35px;
     overflow:hidden;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.4);
-
-    display:flex;
-    flex-direction:column;
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
 }
 
 
@@ -58,7 +55,7 @@ body {
 .header{
     height:100px;
 
-    background:#dfeef9;
+    background:#dcecf8;
 
     display:flex;
     justify-content:space-between;
@@ -67,20 +64,15 @@ body {
     padding:20px;
 }
 
-.header h1{
-    font-size:30px;
-    font-weight:bold;
-}
 
+/* BOTÓN DE INICIO */
 
-/* PERFIL */
-
-.perfil{
+.boton{
     width:55px;
     height:55px;
 
-    background:#55c5ff;
-    color:#0b3d91;
+    background:#59c8ff;
+    color:#0b3475;
 
     border-radius:8px;
 
@@ -89,12 +81,12 @@ body {
     align-items:center;
 
     text-decoration:none;
-    font-size:26px;
+    font-size:28px;
 
     transition:.3s;
 }
 
-.perfil:hover{
+.boton:hover{
     background:#2ea8ff;
     transform:scale(1.05);
 }
@@ -106,23 +98,18 @@ body {
 
 .buscador{
     display:flex;
-
-    padding:15px 20px;
-
-    background:#fff;
 }
 
 .buscador input{
-    flex:1;
-
+    width:190px;
     height:45px;
+
+    padding:0 15px;
 
     border:2px solid #59c8ff;
     border-right:none;
 
     border-radius:20px 0 0 20px;
-
-    padding:0 15px;
 
     outline:none;
 
@@ -131,6 +118,7 @@ body {
 
 .buscador button{
     width:50px;
+    height:45px;
 
     border:none;
 
@@ -144,103 +132,74 @@ body {
     cursor:pointer;
 }
 
-.buscador button:hover{
-    background:#2ea8ff;
-}
-
 
 /* ==========================
           CONTENIDO
 ========================== */
 
 .contenido{
-    flex:1;
-
-    padding:10px 20px;
-
-    overflow-y:auto;
-}
-
-
-/* ==========================
-          MATERIAS
-========================== */
-
-.materias{
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:20px;
-}
-
-
-.materia{
-    height:160px;
-
-    border:3px solid #59c8ff;
-    border-radius:15px;
-
-    background:#fff;
-
-    display:flex;
-    flex-direction:column;
-
-    justify-content:center;
-    align-items:center;
-
-    text-decoration:none;
-    color:#000;
-
-    transition:.3s;
-}
-
-
-.materia:hover{
-    background:#dff5ff;
-
-    transform:scale(1.03);
-}
-
-
-.icono-materia{
-    font-size:55px;
-
-    color:#4b79c7;
-
-    margin-bottom:12px;
-}
-
-
-.materia span{
-    font-size:18px;
-
-    font-weight:bold;
-
+    padding:30px 25px;
     text-align:center;
 }
 
+.imagen{
+    width:180px;
+    height:180px;
 
-/* ==========================
-       BARRA INFERIOR
-========================== */
+    margin:10px auto 20px;
 
-.footer{
-    height:75px;
+    background:#bfeeff;
 
-    border-top:2px solid #eee;
+    border-radius:15px;
 
     display:flex;
-    justify-content:space-around;
+    justify-content:center;
     align-items:center;
 
-    background:#fff;
+    color:#4b79c7;
+    font-size:90px;
+}
+
+.contenido h1{
+    font-size:34px;
+    margin-bottom:25px;
 }
 
 
-.footer-icon{
-    width:55px;
+/* ==========================
+        INFORMACIÓN
+========================== */
+
+.informacion{
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    border:2px solid #ddd;
+    border-radius:10px;
+
+    text-align:left;
+
+    font-size:17px;
+}
+
+
+/* ==========================
+       BOTÓN ENTRAR
+========================== */
+
+.entrar{
+    width:100%;
     height:55px;
+
+    margin-top:15px;
+
+    background:#59c8ff;
+    color:white;
+
+    border-radius:10px;
 
     display:flex;
     justify-content:center;
@@ -248,27 +207,15 @@ body {
 
     text-decoration:none;
 
-    font-size:25px;
-
-    color:#777;
-
-    border-radius:10px;
+    font-size:18px;
+    font-weight:bold;
 
     transition:.3s;
 }
 
-
-.footer-icon:hover{
-    background:#dff5ff;
-
-    color:#3b79c7;
-}
-
-
-.footer-icon.activo{
-    background:#bfeeff;
-
-    color:#0b3d91;
+.entrar:hover{
+    background:#2ea8ff;
+    transform:scale(1.02);
 }
 
 

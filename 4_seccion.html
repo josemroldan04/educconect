@@ -266,24 +266,33 @@ document
     );
 
 
+    /* GUARDAR SESIÓN */
+
+    localStorage.setItem(
+        "educonnectSesion",
+        JSON.stringify({
+            correo: correo,
+            rol: rolSeleccionado
+        })
+    );
+
+
     alert(
         "Registro realizado correctamente."
     );
 
 
-    /* SI ES ESTUDIANTE */
+    /* REDIRECCIÓN SEGÚN EL ROL */
 
     if (rolSeleccionado === "estudiante") {
 
-        window.location.href = "5_seccion.html";
+        window.location.href =
+            "5_seccion.html";
 
     } else {
 
-        alert(
-            "Usuario maestro registrado correctamente."
-        );
-
-        window.location.href = "1_seccion.html";
+        window.location.href =
+            "45_seccion.html";
 
     }
 

@@ -19,132 +19,142 @@
     <!-- ENCABEZADO -->
     <header class="header">
 
-        <div class="iconos">
-
-            <a class="boton-icono" href="6_seccion.html">
-                <i class="fa-solid fa-user"></i>
-            </a>
-
-            <a class="boton-icono" href="7_seccion.html">
-                <i class="fa-solid fa-bell"></i>
-            </a>
-
-        </div>
-
-        <input
-            type="text"
-            id="buscar"
-            placeholder="Buscar materia...">
+        <h1>Mis materias</h1>
 
     </header>
 
 
-    <!-- TÍTULO -->
-    <h1>Menú Principal</h1>
+    <!-- BUSCADOR -->
+    <div class="buscador">
+
+        <input 
+        type="text" 
+        id="buscar"
+        placeholder="Buscar materia...">
+
+        <button onclick="buscarMateria()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+    </div>
 
 
     <!-- MATERIAS -->
-    <main class="grid">
+    <main class="contenido">
 
-        <!-- MATERIA NUEVA -->
-        <a class="card nueva" href="8_seccion.html">
+        <div class="materias">
 
-            <div class="icono-mas">
-                <i class="fa-solid fa-plus"></i>
-            </div>
+            <!-- AGREGAR MATERIA -->
+            <a href="8_seccion.html" class="materia">
 
-            <p>Materia Nueva</p>
+                <div class="icono-materia">
+                    <i class="fa-solid fa-circle-plus"></i>
+                </div>
 
-        </a>
+                <span>Materia nueva</span>
 
-
-        <!-- FÍSICA -->
-        <a class="card" href="18_seccion.html">
-
-            <div class="icono-materia">
-                <i class="fa-solid fa-atom"></i>
-            </div>
-
-            <p>Física</p>
-
-        </a>
+            </a>
 
 
-        <!-- QUÍMICA -->
-        <a class="card" href="27_seccion.html">
+            <!-- FÍSICA -->
+            <a href="18_seccion.html" class="materia">
 
-            <div class="icono-materia">
-                <i class="fa-solid fa-flask"></i>
-            </div>
+                <div class="icono-materia">
+                    <i class="fa-solid fa-atom"></i>
+                </div>
 
-            <p>Química</p>
+                <span>Física</span>
 
-        </a>
-
-
-        <!-- ARTÍSTICA -->
-        <a class="card" href="9_seccion.html">
-
-            <div class="icono-materia">
-                <i class="fa-solid fa-palette"></i>
-            </div>
-
-            <p>Artística</p>
-
-        </a>
+            </a>
 
 
-        <!-- MATEMÁTICAS -->
-        <div class="card">
+            <!-- QUÍMICA -->
+            <a href="27_seccion.html" class="materia">
 
-            <div class="icono-materia">
-                <i class="fa-solid fa-square-root-variable"></i>
-            </div>
+                <div class="icono-materia">
+                    <i class="fa-solid fa-flask"></i>
+                </div>
 
-            <p>Matemáticas</p>
+                <span>Química</span>
 
-        </div>
+            </a>
 
 
-        <!-- FILOSOFÍA -->
-        <div class="card">
+            <!-- ARTÍSTICA -->
+            <a href="9_seccion.html" class="materia">
 
-            <div class="icono-materia">
-                <i class="fa-solid fa-book-open"></i>
-            </div>
+                <div class="icono-materia">
+                    <i class="fa-solid fa-palette"></i>
+                </div>
 
-            <p>Filosofía</p>
+                <span>Artística</span>
+
+            </a>
+
+
+            <!-- MATEMÁTICAS -->
+            <a href="36_seccion.html" class="materia">
+
+                <div class="icono-materia">
+                    <i class="fa-solid fa-calculator"></i>
+                </div>
+
+                <span>Matemáticas</span>
+
+            </a>
 
         </div>
 
     </main>
+
+
+    <!-- BARRA INFERIOR -->
+    <footer class="footer">
+
+        <a href="5_seccion.html" class="footer-icon activo">
+            <i class="fa-solid fa-house"></i>
+        </a>
+
+        <a href="7_seccion.html" class="footer-icon">
+            <i class="fa-solid fa-bell"></i>
+        </a>
+
+        <a href="6_seccion.html" class="footer-icon">
+            <i class="fa-solid fa-user"></i>
+        </a>
+
+    </footer>
 
 </div>
 
 
 <script>
 
-const buscador = document.getElementById("buscar");
+function buscarMateria(){
 
-buscador.addEventListener("keyup", function(){
+    let busqueda = document
+    .getElementById("buscar")
+    .value
+    .toLowerCase();
 
-    const texto = this.value.toLowerCase();
+    let materias = document.querySelectorAll(".materia");
 
-    const cards = document.querySelectorAll(".card");
+    materias.forEach(function(materia){
 
-    cards.forEach(card => {
+        let nombre = materia
+        .querySelector("span")
+        .textContent
+        .toLowerCase();
 
-        const nombre = card.innerText.toLowerCase();
-
-        if(nombre.includes(texto)){
-            card.style.display = "flex";
+        if(nombre.includes(busqueda)){
+            materia.style.display = "flex";
         }else{
-            card.style.display = "none";
+            materia.style.display = "none";
         }
 
     });
 
-});
+}
 
 </script>
 

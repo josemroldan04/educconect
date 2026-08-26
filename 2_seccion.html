@@ -192,15 +192,21 @@ function iniciarSesion() {
         document.getElementById("pin").value;
 
 
-    if (correo === "" ||
+    /* COMPROBAR CAMPOS */
+
+    if (
+        correo === "" ||
         password === "" ||
-        pin === "") {
+        pin === ""
+    ) {
 
         alert("Completa todos los campos.");
 
         return;
     }
 
+
+    /* VALIDAR PIN */
 
     if (pin.length !== 4) {
 
@@ -209,6 +215,8 @@ function iniciarSesion() {
         return;
     }
 
+
+    /* BUSCAR USUARIO */
 
     const usuario =
         JSON.parse(
@@ -230,7 +238,9 @@ function iniciarSesion() {
             usuario.rol !== rolSeleccionado
         ) {
 
-            alert("Los datos ingresados no coinciden con el usuario registrado.");
+            alert(
+                "Los datos ingresados no coinciden con el usuario registrado."
+            );
 
             return;
         }
@@ -238,9 +248,7 @@ function iniciarSesion() {
     }
 
 
-    /*
-       Guardamos la sesión actual.
-    */
+    /* GUARDAR SESIÓN */
 
     localStorage.setItem(
         "educonnectSesion",
@@ -251,24 +259,17 @@ function iniciarSesion() {
     );
 
 
-    /*
-       Por ahora el estudiante va a la sección 5.
-       Cuando hagamos la versión del maestro,
-       conectaremos este botón con su menú.
-    */
+    /* REDIRECCIÓN SEGÚN EL ROL */
 
     if (rolSeleccionado === "estudiante") {
 
-        window.location.href = "5_seccion.html";
+        window.location.href =
+            "5_seccion.html";
 
     } else {
 
-        alert("Inicio de sesión como maestro.");
-
-        /*
-          Aquí conectaremos posteriormente
-          con la sección principal del maestro.
-        */
+        window.location.href =
+            "45_seccion.html";
 
     }
 
