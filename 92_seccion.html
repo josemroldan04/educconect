@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calificaciones - Camila Rodríguez</title>
-    <link rel="stylesheet" href="86_seccion.css">
+    <title>Calificaciones - Sara Ramírez</title>
+    <link rel="stylesheet" href="92_seccion.css">
 </head>
 <body>
 
 <div class="telefono">
 
     <header>
-        <a href="59_seccion.html" class="boton-volver">←</a>
+        <a href="61_seccion.html" class="boton-volver">←</a>
         <h1>Calificaciones</h1>
     </header>
 
@@ -20,8 +20,8 @@
         <div class="perfil">
             <div class="avatar">👩‍🎓</div>
             <div>
-                <h2>Camila Rodríguez</h2>
-                <p>10° · Tecnología</p>
+                <h2>Sara Ramírez</h2>
+                <p>11° · Tecnología</p>
             </div>
         </div>
 
@@ -30,10 +30,10 @@
                 <h3>Actividad 1</h3>
                 <p>Introducción a la tecnología</p>
             </div>
-            <strong>4.6</strong>
+            <strong>4.4</strong>
         </section>
 
-        <section class="actividad" id="actividad2">
+        <section class="actividad">
             <div>
                 <h3>Actividad 2</h3>
                 <p>Investigación sobre tecnología</p>
@@ -43,7 +43,7 @@
 
             <div class="accion">
                 <strong id="nota2">—</strong>
-                <a id="botonCalificar" href="87_seccion.html">Calificar</a>
+                <a id="botonCalificar" href="93_seccion.html">Calificar</a>
             </div>
         </section>
 
@@ -52,7 +52,7 @@
                 <h3>Actividad 3</h3>
                 <p>Proyecto tecnológico</p>
             </div>
-            <strong>4.4</strong>
+            <strong>4.6</strong>
         </section>
 
         <div class="promedio">
@@ -68,7 +68,7 @@
 function cargarCalificacion() {
 
     const datos = localStorage.getItem(
-        "calificacion_camila_actividad2"
+        "calificacion_sara_actividad2"
     );
 
     if (datos) {
@@ -76,6 +76,7 @@ function cargarCalificacion() {
         const calificacion = JSON.parse(datos);
 
         document.getElementById("estado2").textContent = "✓ Calificada";
+
         document.getElementById("nota2").textContent =
             Number(calificacion.nota).toFixed(1);
 
@@ -85,7 +86,7 @@ function cargarCalificacion() {
         document.getElementById("botonCalificar").style.display = "none";
 
         const promedio =
-            (4.6 + Number(calificacion.nota) + 4.4) / 3;
+            (4.4 + Number(calificacion.nota) + 4.6) / 3;
 
         document.getElementById("promedio").textContent =
             promedio.toFixed(1);
