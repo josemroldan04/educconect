@@ -1,120 +1,181 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
     <title>EduConnect - Agregar Materia</title>
 
-    <link rel="stylesheet" href="135_seccion.css">
+    <link
+    rel="stylesheet"
+    href="135_seccion.css">
 
-    <link rel="stylesheet"
+    <link
+    rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
+
 
 <body>
 
+
     <main class="telefono">
+
+
+        <!-- =========================
+             ENCABEZADO
+        ========================== -->
 
         <header class="encabezado">
 
-            <a href="45_seccion.html" class="boton-volver">
+            <a
+            href="45_seccion.html"
+            class="boton-volver">
+
                 ←
+
             </a>
 
-            <h1>Agregar materia</h1>
+
+            <h1>
+                Agregar materia
+            </h1>
 
         </header>
 
 
+        <!-- =========================
+             CONTENIDO
+        ========================== -->
+
         <main class="contenido">
+
 
             <div class="icono-principal">
                 📚
             </div>
 
-            <h2>Nueva materia</h2>
+
+            <h2>
+                Nueva materia
+            </h2>
+
 
             <p class="descripcion">
-                Completa la información para agregar una nueva materia.
+
+                Completa la información para
+                agregar una nueva materia.
+
             </p>
 
 
-            <!-- NOMBRE -->
+            <!-- =========================
+                 NOMBRE
+            ========================== -->
 
             <label for="nombre">
                 Nombre de la materia
             </label>
 
+
             <input
-                type="text"
-                id="nombre"
-                placeholder="Ej. Matemáticas"
-            >
+            type="text"
+            id="nombre"
+            placeholder="Ej. Matemáticas">
 
 
-            <!-- CÓDIGO -->
+            <!-- =========================
+                 CÓDIGO
+            ========================== -->
 
             <label for="codigo">
                 Código de la materia
             </label>
 
+
             <input
-                type="text"
-                id="codigo"
-                placeholder="Ej. MAT-101"
-            >
+            type="text"
+            id="codigo"
+            placeholder="Ej. MAT-101">
 
 
-            <!-- ICONO -->
+            <!-- =========================
+                 ICONO
+            ========================== -->
 
             <label for="icono">
                 Icono de la materia
             </label>
 
+
             <select id="icono">
 
-                <option value="📚">📚 Libro</option>
+                <option value="📚">
+                    📚 Libro
+                </option>
 
-                <option value="🧮">🧮 Matemáticas</option>
+                <option value="🧮">
+                    🧮 Matemáticas
+                </option>
 
-                <option value="🧪">🧪 Ciencias</option>
+                <option value="🧪">
+                    🧪 Ciencias
+                </option>
 
-                <option value="🌎">🌎 Sociales</option>
+                <option value="🌎">
+                    🌎 Sociales
+                </option>
 
-                <option value="🌐">🌐 Idiomas</option>
+                <option value="🌐">
+                    🌐 Idiomas
+                </option>
 
-                <option value="🎵">🎵 Música</option>
+                <option value="🎵">
+                    🎵 Música
+                </option>
 
-                <option value="🎨">🎨 Arte</option>
+                <option value="🎨">
+                    🎨 Arte
+                </option>
 
-                <option value="⚽">⚽ Educación Física</option>
+                <option value="⚽">
+                    ⚽ Educación Física
+                </option>
 
-                <option value="💻">💻 Tecnología</option>
+                <option value="💻">
+                    💻 Tecnología
+                </option>
 
             </select>
 
 
-            <!-- DESCRIPCIÓN -->
+            <!-- =========================
+                 DESCRIPCIÓN
+            ========================== -->
 
             <label for="descripcion">
                 Descripción
             </label>
 
+
             <textarea
-                id="descripcion"
-                placeholder="Escribe una breve descripción de la materia..."
+            id="descripcion"
+            placeholder="Escribe una breve descripción de la materia..."
             ></textarea>
 
 
-            <!-- BOTÓN -->
+            <!-- =========================
+                 BOTÓN
+            ========================== -->
 
             <button
-                class="boton-agregar"
-                onclick="agregarMateria()"
-            >
+            class="boton-agregar"
+            onclick="agregarMateria()">
 
                 <i class="fa-solid fa-plus"></i>
 
@@ -123,7 +184,11 @@
             </button>
 
 
-            <p id="mensaje" class="mensaje"></p>
+            <p
+            id="mensaje"
+            class="mensaje">
+            </p>
+
 
         </main>
 
@@ -132,22 +197,72 @@
 
     <script>
 
+
+        /* =========================================
+           CLAVE EXCLUSIVA DEL PROFESOR
+        ========================================= */
+
+        const CLAVE_MATERIAS =
+            "educonnect_materias_profesor_temporales";
+
+
+        /* =========================================
+           DETECTAR REFRESCO
+        ========================================= */
+
+        const navegacion =
+            performance.getEntriesByType("navigation")[0];
+
+
+        if (
+            navegacion &&
+            navegacion.type === "reload"
+        ) {
+
+            sessionStorage.removeItem(
+                CLAVE_MATERIAS
+            );
+
+        }
+
+
+        /* =========================================
+           AGREGAR MATERIA
+        ========================================= */
+
         function agregarMateria() {
 
+
             const nombre =
-                document.getElementById("nombre").value.trim();
+                document
+                .getElementById("nombre")
+                .value
+                .trim();
+
 
             const codigo =
-                document.getElementById("codigo").value.trim();
+                document
+                .getElementById("codigo")
+                .value
+                .trim();
+
 
             const icono =
-                document.getElementById("icono").value;
+                document
+                .getElementById("icono")
+                .value;
+
 
             const descripcion =
-                document.getElementById("descripcion").value.trim();
+                document
+                .getElementById("descripcion")
+                .value
+                .trim();
+
 
             const mensaje =
-                document.getElementById("mensaje");
+                document
+                .getElementById("mensaje");
 
 
             /* =========================
@@ -163,6 +278,7 @@
                     "mensaje error";
 
                 return;
+
             }
 
 
@@ -179,6 +295,49 @@
                     "mensaje error";
 
                 return;
+
+            }
+
+
+            /* =========================
+               OBTENER MATERIAS
+            ========================== */
+
+            let materias =
+                JSON.parse(
+                    sessionStorage.getItem(
+                        CLAVE_MATERIAS
+                    )
+                ) || [];
+
+
+            /* =========================
+               COMPROBAR CÓDIGO REPETIDO
+            ========================== */
+
+            const existe =
+                materias.some(
+                    function(item) {
+
+                        return (
+                            item.codigo.toLowerCase() ===
+                            codigo.toLowerCase()
+                        );
+
+                    }
+                );
+
+
+            if (existe) {
+
+                mensaje.textContent =
+                    "Ya existe una materia con ese código.";
+
+                mensaje.className =
+                    "mensaje error";
+
+                return;
+
             }
 
 
@@ -199,20 +358,24 @@
             };
 
 
-            let materias =
-                JSON.parse(
-                    localStorage.getItem("educonnect_materias")
-                ) || [];
+            /* =========================
+               GUARDAR TEMPORALMENTE
+            ========================== */
+
+            materias.push(
+                nuevaMateria
+            );
 
 
-            materias.push(nuevaMateria);
-
-
-            localStorage.setItem(
-                "educonnect_materias",
+            sessionStorage.setItem(
+                CLAVE_MATERIAS,
                 JSON.stringify(materias)
             );
 
+
+            /* =========================
+               MENSAJE
+            ========================== */
 
             mensaje.textContent =
                 "Materia agregada correctamente.";
@@ -221,18 +384,26 @@
                 "mensaje correcto";
 
 
-            setTimeout(function() {
+            /* =========================
+               VOLVER AL MENÚ
+            ========================== */
 
-                window.location.href =
-                    "45_seccion.html";
+            setTimeout(
+                function() {
 
-            }, 1000);
+                    window.location.href =
+                        "45_seccion.html";
+
+                },
+                1000
+            );
 
         }
 
+
     </script>
+
 
 </body>
 
 </html>
-

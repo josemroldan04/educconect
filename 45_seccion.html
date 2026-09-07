@@ -101,6 +101,151 @@
 
     </main>
 
+
+    <script>
+
+        /* =========================================
+           CLAVE DE LAS MATERIAS TEMPORALES
+        ========================================= */
+
+        const CLAVE_MATERIAS =
+            "educonnect_materias_profesor_temporales";
+
+
+        /* =========================================
+           DETECTAR SI LA PÁGINA FUE REFRESCADA
+        ========================================= */
+
+        const navegacion =
+            performance.getEntriesByType("navigation")[0];
+
+
+        if (
+            navegacion &&
+            navegacion.type === "reload"
+        ) {
+
+            sessionStorage.removeItem(
+                CLAVE_MATERIAS
+            );
+
+        }
+
+
+        /* =========================================
+           CARGAR MATERIAS CREADAS
+        ========================================= */
+
+        function cargarMaterias() {
+
+            const materias =
+                JSON.parse(
+                    sessionStorage.getItem(
+                        CLAVE_MATERIAS
+                    )
+                ) || [];
+
+
+            const contenido =
+                document.querySelector(".contenido");
+
+
+            const botonAgregar =
+                document.querySelector(".agregar-materia");
+
+
+            materias.forEach(function(materia) {
+
+
+                /* =========================
+                   CREAR TARJETA
+                ========================== */
+
+                const tarjeta =
+                    document.createElement("a");
+
+
+                tarjeta.className =
+                    "materia materia-creada";
+
+
+                tarjeta.href = "#";
+
+
+                /* =========================
+                   IMAGEN / ICONO
+                ========================== */
+
+                const imagen =
+                    document.createElement("div");
+
+
+                imagen.className =
+                    "imagen-materia";
+
+
+                imagen.textContent =
+                    materia.icono;
+
+
+                /* =========================
+                   NOMBRE
+                ========================== */
+
+                const nombre =
+                    document.createElement("span");
+
+
+                nombre.textContent =
+                    materia.nombre;
+
+
+                /* =========================
+                   INFORMACIÓN
+                ========================== */
+
+                const informacion =
+                    document.createElement("small");
+
+
+                informacion.textContent =
+                    "Código: " + materia.codigo;
+
+
+                /* =========================
+                   AGREGAR ELEMENTOS
+                ========================== */
+
+                tarjeta.appendChild(imagen);
+
+                tarjeta.appendChild(nombre);
+
+                tarjeta.appendChild(informacion);
+
+
+                /* =========================
+                   INSERTAR ANTES DE
+                   "AGREGAR MATERIA"
+                ========================== */
+
+                contenido.insertBefore(
+                    tarjeta,
+                    botonAgregar
+                );
+
+            });
+
+        }
+
+
+        /* =========================================
+           CARGAR AL ABRIR
+        ========================================= */
+
+        cargarMaterias();
+
+    </script>
+
 </body>
 
 </html>

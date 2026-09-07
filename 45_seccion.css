@@ -215,6 +215,10 @@ body{
 }
 
 
+/* =========================================
+   IMAGEN DE MATERIA
+========================================= */
+
 .imagen-materia{
 
     width:100%;
@@ -241,9 +245,13 @@ body{
 }
 
 
+/* =========================================
+   NOMBRE
+========================================= */
+
 .materia span{
 
-    height:50px;
+    min-height:50px;
 
     display:flex;
 
@@ -254,6 +262,26 @@ body{
     font-size:21px;
 
     font-weight:bold;
+
+    text-align:center;
+}
+
+
+/* =========================================
+   INFORMACIÓN DE MATERIA CREADA
+========================================= */
+
+.materia-creada small{
+
+    display:block;
+
+    text-align:center;
+
+    color:#687789;
+
+    font-size:12px;
+
+    padding:0 10px 10px;
 }
 
 
